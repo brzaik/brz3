@@ -1,17 +1,5 @@
 class PagesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show, :logovid, :homepage]
-
-  def logovid
-    respond_to do |format|
-      format.html { render :layout => "plain" }
-    end
-  end
-
-  def homepage
-    @all_homepages = Page.homepage.all
-
-    redirect_to @all_homepages[0]
-  end
+  before_filter :authenticate_user!, :except => [:show]
 
   # GET /pages
   # GET /pages.json

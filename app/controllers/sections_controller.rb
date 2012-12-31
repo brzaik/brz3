@@ -1,4 +1,4 @@
-class RowsController < ApplicationController
+class SectionsController < ApplicationController
   before_filter :get_page, :authenticate_user!
 
 
@@ -6,67 +6,67 @@ class RowsController < ApplicationController
     @page = Page.find(params[:page_id])
   end
 
-  # GET /rows/new
-  # GET /rows/new.json
+  # GET /sections/new
+  # GET /sections/new.json
   def new
-    @row = Row.new
-    @row.page = @page
+    @section = Section.new
+    @section.page = @page
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render :json => @row }
+      format.json { render :json => @section }
     end
   end
 
-  # GET /rows/1/edit
+  # GET /sections/1/edit
   def edit
-    @row = Row.find(params[:id])
-    @page = @row.page
+    @section = Section.find(params[:id])
+    @page = @section.page
   end
 
-  # POST /rows
-  # POST /rows.json
+  # POST /sections
+  # POST /sections.json
   def create
-    @row = Row.new(params[:row])
-    @row.page = @page
+    @section = Section.new(params[:section])
+    @section.page = @page
 
     respond_to do |format|
-      if @row.save
-        format.html { redirect_to @page, :notice => 'Row was successfully created.' }
-        format.json { render :json => @row, :status => :created, :location => @row }
+      if @section.save
+        format.html { redirect_to @page, :notice => 'Section was successfully created.' }
+        format.json { render :json => @section, :status => :created, :location => @section }
       else
         format.html { render :action => "new" }
-        format.json { render :json => @row.errors, :status => :unprocessable_entity }
+        format.json { render :json => @section.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # PUT /rows/1
-  # PUT /rows/1.json
+  # PUT /sections/1
+  # PUT /sections/1.json
   def update
-    @row = Row.find(params[:id])
-    @page = @row.page
+    @section = Section.find(params[:id])
+    @page = @section.page
 
     respond_to do |format|
-      if @row.update_attributes(params[:row])
-        format.html { redirect_to @page, :notice => 'Row was successfully updated.' }
+      if @section.update_attributes(params[:section])
+        format.html { redirect_to @page, :notice => 'Section was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
-        format.json { render :json => @row.errors, :status => :unprocessable_entity }
+        format.json { render :json => @section.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /rows/1
-  # DELETE /rows/1.json
+  # DELETE /sections/1
+  # DELETE /sections/1.json
   def destroy
-    @row = Row.find(params[:id])
-    @page = @row.page
-    @row.destroy
+    @section = Section.find(params[:id])
+    @page = @section.page
+    @section.destroy
 
     respond_to do |format|
-      format.html { redirect_to @page, :notice => 'Row was successfully deleted.' }
+      format.html { redirect_to @page, :notice => 'Section was successfully deleted.' }
       format.json { head :no_content }
     end
   end
