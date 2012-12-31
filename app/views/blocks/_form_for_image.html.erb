@@ -1,0 +1,14 @@
+<%= f.fields_for :image do |ff| %>
+  <div class="field">
+    <%= ff.label :upload_id, "Select Image to Use" %>
+    <%= ff.collection_select(:upload_id, Upload.all, :id, :myfile_file_name, :include_blank => true) %>
+  </div>
+  <div class="field">
+    <%= ff.label :caption %>
+    <%= ff.text_field :caption, :class => "fillWidth" %>
+  </div>
+  <div class="field">
+    <%= ff.label :url_link, "URL upon click" %>
+    <%= ff.text_field :url_link, :class => "fillWidth" %>
+  </div>
+<% end %>

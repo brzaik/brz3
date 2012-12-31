@@ -1,0 +1,6 @@
+<h3>Latest Tweets from <%= link_to twitter_board.account_name, "https://twitter.com/#{ twitter_board.account_name }" %></h3>
+<br />
+<% tweets = Twitter.user_timeline("#{ twitter_board.account_name }", :count => twitter_board.display_num) %>
+<% tweets.each do |tweet| %>
+  <p><%= tweet.created_at.strftime("%b %d") %>: <%= tweet.text %></p>
+<% end %>

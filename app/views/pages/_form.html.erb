@@ -1,0 +1,49 @@
+<%= form_for(@page) do |f| %>
+  <% if @page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% @page.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, :class => "fillWidth" %>
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description, :class => 'ckeditor' %>
+  </div>
+  <div class="field">
+    <%= f.check_box :is_homepage %> <%= f.label :is_homepage %>
+  </div>
+  <div class="field">
+    <%= f.check_box :is_project %> <%= f.label :is_project %>
+  </div>
+  <div class="field">
+    <%= f.label :main_menu_item_id %>
+    <%= f.number_field :main_menu_item_id %>
+  </div>
+  <div class="field">
+    <%= f.label :template_id %>
+    <%= f.collection_select(:template_id, @templates, :id, :template_name, :include_blank => true) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :upload_id, "Main Logo Upload" %>
+    <%= f.collection_select(:upload_id, Upload.all, :id, :myfile_file_name, :include_blank => true) %>
+  </div>
+  <div class="field">
+    <%= f.label :meta_description %>
+    <%= f.text_field :meta_description, :class => "fillWidth" %>
+  </div>
+  <br />
+  <div class="actions">
+    <%= f.submit button_text, :class => "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,30 @@
+<%= form_for [@imageable, @image] do |f| %>
+  <% if @image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+      <ul>
+      <% @image.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :upload_id, "Select Image to Use" %>
+    <%= f.collection_select(:upload_id, Upload.all, :id, :myfile_file_name, :include_blank => true) %>
+  </div>
+  <div class="field">
+    <%= f.label :caption %>
+    <%= f.text_field :caption, :class => "fillWidth" %>
+  </div>
+  <div class="field">
+    <%= f.label :position %>
+    <%= f.number_field :position %>
+  </div>
+  <br />
+  <div class="actions">
+    <%= f.submit button_text, :class => "btn btn-primary" %>
+  </div>
+<% end %>

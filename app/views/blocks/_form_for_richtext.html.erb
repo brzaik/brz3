@@ -1,0 +1,6 @@
+<%= f.fields_for :richtext do |ff| %>
+  <div class="field">
+    <%= ff.label :content %>
+    <%= ff.text_area :content, :class => 'ckeditor' %>
+  </div>
+<% end %>

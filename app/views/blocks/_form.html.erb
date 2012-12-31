@@ -1,0 +1,65 @@
+<%= form_for([@page, @column, setup_richtext_block(@block)], :html => { :multipart => true }) do |f| %>
+  <% if @block.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@block.errors.count, "error") %> prohibited this block from being saved:</h2>
+
+      <ul>
+      <% @block.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :position %>
+    <%= f.number_field :position %>
+  </div>
+
+  <div class="field">
+    <%= f.label :additional_styles %>
+    <%= f.text_field :additional_styles, :class => "fillWidth" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :additional_tags %>
+    <%= f.text_field :additional_tags, :class => "fillWidth" %>
+  </div>
+
+  <hr />
+
+  <div class="field">
+    <%= f.label :content_name, "Select type of block to add" %>
+    <%= f.select :content_name, { "Rich Text" => "Richtext", "Image" => "Image", "Video" => "Video", "Twitter Board" => "TwitterBoard" }, {}, { :id => "content_name_selector" } %>
+  </div>
+
+  <div id="form_div">
+    <div id="richtext_form_div">
+      <%= render :partial => "blocks/form_for_richtext", :locals => { :f => f } %>
+    </div>
+    <div id="image_form_div">
+      <%= render :partial => "blocks/form_for_image", :locals => { :f => f } %>
+    </div>
+    <div id="video_form_div">
+      <%= render :partial => "blocks/form_for_video", :locals => { :f => f } %>
+    </div>
+    <div id="twitterboard_form_div">
+      <%= render :partial => "blocks/form_for_twitter_board", :locals => { :f => f } %>
+    </div>
+  </div>
+  <br />
+  <div class="actions">
+    <%= f.submit button_text, :class => "btn btn-primary" %>
+  </div>
+<% end %>
+
+<script>
+  $(document).ready(function() {
+    $("#video_form_div").hide();
+
+    $("#content_name_selector").change(function() {
+      $("#form_div > div").slideUp("fast");
+      $("[id^='" + $("#content_name_selector").val().toLowerCase() + "']").slideDown("fast");
+    });
+  });
+</script>

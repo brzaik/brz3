@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= metamagic :description => "Two Weeks From Everywhere Productions, LLC, is a unique production house developing creative ways of telling stories for the screen, television, and Web. We aim to combine entertainment with a true learning experience.", :keywords => %w(film television web production company llc two-weeks american-detour detour american travel show) %>
+  <title><%= page_title %></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= jquery_include_tag :google, :force => true %>
+  <%= javascript_include_tag "application" %>
+
+  <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+  <script src="http://vjs.zencdn.net/c/video.js"></script>
+
+  <%= csrf_meta_tags %>
+
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34774872-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</head>
+<body>
+  <div style="width: 80%; margin: 0 auto; text-align: center;">
+    <%= yield %>
+  </div>
+
+  <script type="text/javascript">
+      // Once the video is ready
+      _V_("logovid").ready(function(){  
+
+          var myPlayer = this;  // Store the video object
+          var aspectRatio = 9/16; // Make up an aspect ratio
+
+          function resizeVideoJS(){
+                // Get the parent element's actual width
+                var width = document.getElementById(myPlayer.id).parentElement.offsetWidth;
+                myPlayer.width(width).height( width * aspectRatio ); // Set width to fill parent element, Set height 
+          }
+
+          resizeVideoJS(); // Initialize resizeVideoJS()
+          window.onresize = resizeVideoJS; // Call resizeVideoJS() on window.resize();
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Account name:</b>
+  <%= @twitter_board.account_name %>
+</p>
+
+<p>
+  <b>Display num:</b>
+  <%= @twitter_board.display_num %>
+</p>
+
+<p>
+  <b>Block:</b>
+  <%= @twitter_board.block_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_twitter_board_path(@twitter_board) %> |
+<%= link_to 'Back', twitter_boards_path %>

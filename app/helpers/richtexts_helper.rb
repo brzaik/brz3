@@ -1,0 +1,2 @@
+module RichtextsHelper
+end

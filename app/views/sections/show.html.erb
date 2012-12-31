@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Page:</b>
+  <%= @row.page_id %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @row.position %>
+</p>
+
+
+<%= link_to 'Edit', edit_row_path(@row) %> |
+<%= link_to 'Back', rows_path %>

@@ -1,0 +1,10 @@
+<%= f.fields_for :video do |ff| %>
+  <div class="field">
+    <%= ff.label :title %>
+    <%= ff.text_field :title %>
+  </div>
+  <div class="field">
+    <%= ff.label :url %>
+    <%= ff.text_field :url, :class => "fillWidth" %>
+  </div>
+<% end %>

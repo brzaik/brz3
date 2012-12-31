@@ -1,0 +1,67 @@
+<div class="row-fluid">
+  <div class="span12">
+    <h1><%= @page.title %></h1>
+    <% if current_user %>
+      <div class="admin-links">
+        <%= link_to "Edit Page", edit_page_path(@page), :class => "btn btn-mini" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br /><br />
+<div class="row-fluid">
+  <div class="span6">
+    <% if not @page.upload_id.nil? %>
+      <% upload = Upload.find(@page.upload_id) %>
+      <%= image_tag upload.myfile.url %>
+    <% end %>
+  </div>
+  <div class="span6">
+    <p><%=raw @page.description %></p>
+  </div>
+</div>
+<br /><br />
+<div class="row-fluid">
+  <div class="span6">
+    <!--<h3>Trailer</h3>
+    <%# if current_user %>
+      <div class="admin-links">
+        <%#= link_to "Add Trailer", new_page_video_path(@page), :class => "btn btn-mini" %>
+      </div>
+      <br />
+    <%# end %>
+
+    <%# @page.videos.each do |video| %>
+      <iframe src="http://player.vimeo.com/video/<%#= video.url %>" width="100%" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    <%# end %>
+  -->
+    <%= image_tag("misc/amdet_collage1.png") %>
+  </div>
+  <div class="span6">
+    <h3>Stills</h3>
+    <% if current_user %>
+      <div class="admin-links">
+        <%= link_to "Add Image", new_page_image_path(@page), :class => "btn btn-mini" %>
+      </div>
+      <br />
+    <% end %>
+    
+    <ul class="thumbnails no-margin">
+      <% @page.images.each do |image| %>
+        <% upload = Upload.find(image.upload_id) %>
+        <li style="width:80px;">
+          <div class="thumbnail add-floating-admin-links" style="width: 80px;">
+            <div class="admin-links admin-links-floating">
+              <%= link_to "Edit", edit_page_image_path(@page, image), :class => "btn btn-mini" %>
+              <%= link_to "X", [@page, image], :confirm => "Are you sure you wish to remove this gallery image?  The source upload will not be deleted.", :method => :delete, :class => "btn btn-mini" %>
+            </div>
+            <%= link_to image_tag(upload.myfile.url(:thumb), :alt => image.caption, :title => image.caption, :class => "gallery-img" ), upload.myfile.url(:full), { :rel => "lightbox[#{@page.id}]", :title => image.caption } %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+    
+  </div>
+</div>
+<br /><br />
+<%= render @page %>

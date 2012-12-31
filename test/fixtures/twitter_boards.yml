@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  account_name: MyString
+  display_num: 1
+  block_id: 1
+
+two:
+  account_name: MyString
+  display_num: 1
+  block_id: 1

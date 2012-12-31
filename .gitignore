@@ -1,3 +1,5 @@
+.powenv
+.DS_Store
 *.rbc
 *.sassc
 .sass-cache
@@ -14,3 +16,4 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+database.yml

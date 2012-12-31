@@ -1,0 +1,160 @@
+/* --------------------
+  LightZAP Theme (2.52a)
+-----------------------
+  Name: Default
+  Date: 2012.09.11
+  By: Szalai Mihaly*/
+
+/* Transparent background */
+#lightzap, .lz-container, .lz-float
+{
+  background:image-url("layout/blk-60pc.png");
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/layout/blk-60pc.png',sizingMethod='scale');
+  background:rgba(16,16,32,0.6);
+}
+#lightzap.full-screen .lz-buttonContainer, .lz-float, .lz-desc
+{
+  background:image-url("layout/blk-60pc.png");
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/layout/blk-60pc.png',sizingMethod='scale');
+  background:rgba(16,16,32,0.6);
+}
+/* Overlay */
+#lightzap { font:normal 16px "Arial", sans-serif;color:#fff; }
+/* Fullscreen background */
+#lightzap.full-screen
+{
+  background:#222;
+  box-shadow:inset 0 0 126px #002;
+  font-size:22px;
+}
+/* Fullscreen image effect */
+#lightzap.full-screen .lz-image { box-shadow:0 0 32px #000; }
+/* Image box */
+.lz-container { box-shadow:0 0 64px #000;margin:16px; }
+#lightzap.full-screen .lz-container { margin:0; }
+/* Elements opacity */
+.lz-container:hover .lz-float
+{
+  filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity:0.8;
+}
+.lz-container .lz-float:hover, #lightzap.full-screen .lz-container .lz-float
+{
+  filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity:1;
+}
+/* Float elements */
+.lz-float
+{
+  color:#fff;
+  position:absolute;
+  font-weight:normal;
+  text-transform:none;
+  padding:0.25em 0.5em;
+}
+#lightzap.full-screen .lz-float
+{
+  padding:0.5em;
+  -webkit-border-radius:.5em;
+  -moz-border-radius:.5em;
+  -ms-border-radius:.5em;
+  -o-border-radius:.5em;
+  border-radius:.5em;
+}
+/* Buttons */
+.lz-buttonContainer { top:0;right:0;padding:0;background:transparent; }
+#lightzap.full-screen .lz-buttonContainer
+{
+  padding-bottom:0.25em;
+}
+.lz-button { margin:4px; }
+/* Caption */
+.lz-caption
+{
+  bottom:-20px;
+  left:0;
+  margin:8px;
+  font-weight:bold;
+  font-size: 12px;
+}
+/* Description */
+#lightzap.full-screen .lz-desc, .lz-desc
+{
+  width:60%;
+  position:absolute;
+  top:0;
+  margin: 10% 20%;
+  padding: 1.5em;
+  font-size:80%;
+  font-weight:normal;
+  -webkit-border-radius:.2em;
+  -moz-border-radius:.2em;
+  -ms-border-radius:.2em;
+  -o-border-radius:.2em;
+  border-radius:.2em;
+}
+/* Number */
+.lz-number, .lz-resolution
+{
+  right:0px;
+  bottom:0px;
+  font-size:75%;
+  background:transparent;
+}
+/* Author and link */
+.lz-by
+{
+  left:0px;
+  bottom:0px;
+  font-size:75%;
+  margin:0;
+}
+.lz-by:hover { color:#fff; }
+.lz-by:hover span { color:#2e3; }
+/* Resolution */
+.lz-resolution { display:none!important; }
+/* Disabled default
+#lightzap.full-screen .lz-resolution
+{
+  right:0px;
+  bottom:0px;
+  font-size:75%;
+  background:transparent;
+  display:table!important; 
+}
+#lightzap.full-screen .lz-number { bottom:1.25em; }*/
+
+
+/* Resource */
+.lz-loader  { background:transparent image-url("lightbox2/loading.gif") 50% 50% no-repeat; }
+.lz-prev  { background:transparent image-url("lightbox2/prev.png") 5% 48% no-repeat; }
+.lz-next  { background:transparent image-url("lightbox2/next.png") 95% 48% no-repeat; }
+.lz-close { background:transparent image-url("lightbox2/close.png"); }
+.lz-download  { background:transparent image-url("lightbox2/download.png"); }
+.lz-fullScreen  { background:transparent image-url("lightbox2/fullscreen.png"); }
+.lz-print { background:transparent image-url("lightbox2/print.png"); }
+.lz-more  { background:transparent image-url("lightbox2/more.png"); }
+.lz-like span,
+.lz-like  { background:transparent image-url("lightbox2/like.png"); }
+
+/* ---- Hardcore ---- */
+#lightzap{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9000;}
+.lz-image{max-width:100%;max-height:100%;}
+#lightzap.full-screen .lz-image{width:auto;}
+#lightzap a img{border:none;}
+.lz-container{position:relative;}
+#lightzap.full-screen .lz-container{width:100%;height:100%;}
+.lz-loader{position:absolute;top:0;left:0;height:100%;width:100%;text-align:center;line-height:0;}
+.lz-nav{position:absolute;top:5%;left:0;height:90%;width:100%;}
+.lz-container > .nav{left:0;}
+.lz-nav a{outline:none;}
+.lz-prev,.lz-next{width:49%;height:100%;display:block;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=40);opacity:0.4;}
+.lz-prev:hover,.lz-next:hover{filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100)!important;opacity:1!important;}
+.lz-prev{left:0;float:left;}
+.lz-next{right:0;float:right;}
+.lz-caption{max-width:100%;text-align:left;overflow:hidden;word-wrap:break-word;}
+.lz-by{text-decoration:none;}
+.lz-buttonContainer{text-align:right;vertical-align:top;}
+.lz-button{display:inline-block;zoom:1;width:24px;height:24px;outline:none;}
+.lz-button:hover{cursor:pointer;}
+#lightzap.full-screen .lz-fullScreen{display:none;}

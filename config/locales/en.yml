@@ -1,0 +1,50 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  blocks:
+    title: "Blocks"
+
+  columns:
+    title: "Columns"
+
+  contacts:
+    title: "Contact"
+    new:
+      title: "Contact Us"
+
+  images:
+    title: "Images"
+
+  main_menu_items:
+    title: "Main Menu Items"
+
+  pages:
+    title: "Pages"
+    logovid:
+      title: "Welcome Intro"
+
+  richtexts:
+    title: "Rich Texts"
+
+  rows:
+    title: "Rows"
+
+  templates:
+    title: "Templates"
+
+  twitter_boards:
+    title: "Twitter Boards"
+
+  uploads:
+    title: "Uploads"
+
+  users:
+    title: "Users"
+
+  videos:
+    title: "Videos"
+
+  devise:
+    sessions:
+      title: "Login"

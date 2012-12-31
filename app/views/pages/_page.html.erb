@@ -1,0 +1,8 @@
+<%= render page.rows %>
+
+<% if current_user %>
+  <div class="admin-links">
+    <%= link_to "Add Row Here", new_page_row_path(page), :class => "btn btn-mini" %>
+    <br /><br />
+  </div>
+<% end %>

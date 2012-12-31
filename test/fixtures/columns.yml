@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  page_id: 1
+  position: 1
+  span_width: 1
+
+two:
+  page_id: 1
+  position: 1
+  span_width: 1

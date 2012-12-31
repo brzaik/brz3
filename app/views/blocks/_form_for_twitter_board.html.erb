@@ -1,0 +1,10 @@
+<%= f.fields_for :twitter_board do |ff| %>
+  <div class="field">
+    <%= ff.label :account_name %>
+    <%= ff.text_field :account_name %>
+  </div>
+  <div class="field">
+    <%= ff.label :display_num %>
+    <%= ff.number_field :display_num %>
+  </div>
+<% end %>

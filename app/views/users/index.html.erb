@@ -1,0 +1,18 @@
+<h1>Listing users</h1>
+<br />
+
+<table class="table">
+  <tr>
+    <th>Email</th>
+    <th>Approved?</th>
+    <th></th>
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.email %></td>
+      <td><%= user.approved? ? 'Yes' : 'No' %></td>
+      <td>&nbsp;</td>
+    </tr>
+  <% end %>
+</table>

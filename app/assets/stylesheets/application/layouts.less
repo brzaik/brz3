@@ -1,0 +1,80 @@
+//
+// Layouts
+// Fixed-width and fluid (with sidebar) layouts
+// --------------------------------------------
+
+
+// Container (centered, fixed-width layouts)
+.container {
+  .container-fixed();
+}
+
+// Fluid layouts (left aligned, with sidebar, min- & max-width content)
+.container-fluid {
+  .clearfix();
+}
+
+footer {
+  padding-left: 20px;
+  z-index: 999;
+  position: relative;
+  background: @black;
+  min-height: 200px;
+
+  .social-square {
+    border: solid 1px @gray;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+
+    &:hover {
+      border: solid 1px @white;
+    }
+  }
+
+  [class*="span"] {
+    padding: 20px 0px;
+  }
+
+  #twitter {
+    background: @grayDarker;
+    padding: 0px;
+
+    > div {
+      padding: 20px;
+      border-left: solid 4px @grayDark;
+    }
+  }
+}
+
+#main {
+  background: #d2cbac image-url("layout/bg.jpg") bottom left repeat-x;
+  padding: 1% 2% 3% 0;
+  min-height: 600px;
+}
+#logotop {
+  margin-bottom: 24px;
+
+  img { min-width: 80%;}
+}
+
+
+// for front page (logo animation):
+#logovid-skip {
+  text-align: right;
+  margin: 0px;
+  padding: 0px;
+
+  a {
+    display: block;
+    padding: 4px 12px;
+    background: none;
+    color: @gray;
+    margin: 0 auto;
+
+    &:hover {
+      background: @grayDark;
+      color: @linkColorHover;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<%= form_for(@twitter_board) do |f| %>
+  <% if @twitter_board.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@twitter_board.errors.count, "error") %> prohibited this twitter_board from being saved:</h2>
+
+      <ul>
+      <% @twitter_board.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :account_name %><br />
+    <%= f.text_field :account_name %>
+  </div>
+  <div class="field">
+    <%= f.label :display_num %><br />
+    <%= f.number_field :display_num %>
+  </div>
+  <div class="field">
+    <%= f.label :block_id %><br />
+    <%= f.number_field :block_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
