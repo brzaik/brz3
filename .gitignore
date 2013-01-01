@@ -18,3 +18,4 @@ rerun.txt
 pickle-email-*.html
 database.yml
 setup_mail.rb
+/public/system/*
