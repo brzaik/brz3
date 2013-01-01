@@ -21,39 +21,40 @@
 </head>
 <body class="<%= user_signed_in? and current_user.view_as_admin? ? 'view-admin-true' : 'view-admin-false' %>">
   
-  <div class="container">
+  <div class="container" style="position: relative;">
+    <%= image_tag("z-logo-top.png", :alt => "Brian R Zaik", :width => "100", :style => "position: absolute; top: 0px; left: 0px;") %>
+  </div>
+  
 
-    <%= image_tag("z-logo-top.png", :alt => "Brian R Zaik", :width => "92") %>
-    <h1 style="color: #000; font-weight: 700;">Brian R Zaik</h1>
-    <%= render :partial => "elements/admin_menu" %>
+  <header class="main-header">
+    <div class="container">
+      <h1>Brian Zaik<small>UX Designer + Developer</small></h1>
+    </div>
+  </header>
 
-    <% if flash[:notice] or alert %>
-      <p class="alert" style="margin: 0px;">
-        <%= flash[:notice] %>
-        <%= alert %>
-      </p>
-    <% end %>
+    
+  <%= render :partial => "elements/admin_menu" %>
 
-    <div id="main">
+  <% if flash[:notice] or alert %>
+    <p class="alert" style="margin: 0px;">
+      <%= flash[:notice] %>
+      <%= alert %>
+    </p>
+  <% end %>
 
-      <div class="row-fluid">
-        <div id="main-sidebar" class="span3">
-          
-        </div>
-        <div class="span9">
+  <div id="main" class="container">
 
-          <div id="logotop">
-            &nbsp;
-          </div>
-
-          <div class="vizblock-dark">
-            <div class="default-padding">
-              <%= yield %>
-            </div>
-          </div>
-        </div>
+    <div class="row-fluid">
+      <div class="span7">
+        <h1 style="margin: 40px 0px 40px 15px; font-size: 52px; line-height: 60px;">Hi there, I'm Brian. I design and build products aimed at making life more enjoyable.</h1>
+      </div>
+      <div class="span5">
+        &nbsp;
       </div>
     </div>
+    
+    <%= yield %>
+     
   </div>
 
 </body>
