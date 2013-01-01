@@ -14,12 +14,17 @@
 
   <%= csrf_meta_tags %>
 
+  <script type="text/javascript" src="//use.typekit.net/fon6qml.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
   <!-- TODO put google analytics here -->
 </head>
 <body class="<%= user_signed_in? and current_user.view_as_admin? ? 'view-admin-true' : 'view-admin-false' %>">
   
-  <div class="container-fluid">
+  <div class="container">
 
+    <%= image_tag("z-logo-top.png", :alt => "Brian R Zaik", :width => "92") %>
+    <h1 style="color: #000; font-weight: 700;">Brian R Zaik</h1>
     <%= render :partial => "elements/admin_menu" %>
 
     <% if flash[:notice] or alert %>
