@@ -375,7 +375,12 @@ header.main-header .navbar {
       color: @black;
       line-height: normal;
 
-      &:hover { text-decoration: none; }
+      &:hover { 
+        text-decoration: none; 
+        color: @linkColorHover !important;
+
+        small { color: @linkColorHover !important; }
+      }
 
       small {
         #font > .sans-serif(28px, 400, @baseLineHeight);
