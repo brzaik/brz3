@@ -26,9 +26,31 @@
   </div>
   
 
+  <!--
   <header class="main-header">
     <div class="container">
       <h1>Brian Zaik<small>UX Designer + Developer</small></h1>
+    </div>
+  </header>
+-->
+
+  <header class="main-header">
+    <div class="container">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <h1 class="brand">
+            <%= link_to '#' do %>
+              Brian Zaik<small>UX Designer + Developer</small>
+            <% end %>
+          </h1>
+          <ul class="nav pull-right">
+            <li class="active"><a href="#">Works</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </header>
 
