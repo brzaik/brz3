@@ -1,5 +1,11 @@
 Brz3::Application.routes.draw do
 
+  resources :quotes
+
+  resources :links
+
+  resources :tags
+
   devise_for :users
 
   devise_scope :user do

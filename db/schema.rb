@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120930013226) do
+ActiveRecord::Schema.define(:version => 20130108034553) do
 
   create_table "blocks", :force => true do |t|
     t.string   "content_name"
@@ -43,6 +43,16 @@ ActiveRecord::Schema.define(:version => 20120930013226) do
     t.string   "caption"
   end
 
+  create_table "links", :force => true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.integer  "linkable_id"
+    t.string   "linkable_type"
+    t.string   "caption"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -55,6 +65,16 @@ ActiveRecord::Schema.define(:version => 20120930013226) do
   end
 
   add_index "pages", ["slug"], :name => "index_pages_on_slug", :unique => true
+
+  create_table "quotes", :force => true do |t|
+    t.string   "author"
+    t.text     "quote"
+    t.string   "concatenated_quote"
+    t.integer  "quoteable_id"
+    t.string   "quoteable_type"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
 
   create_table "richtexts", :force => true do |t|
     t.integer  "block_id"
@@ -70,6 +90,12 @@ ActiveRecord::Schema.define(:version => 20120930013226) do
     t.string   "additional_tags"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "templates", :force => true do |t|

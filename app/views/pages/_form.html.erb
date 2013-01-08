@@ -17,31 +17,27 @@
   </div>
   <div class="field">
     <%= f.label :description %>
-    <%= f.text_area :description, :class => 'ckeditor' %>
+    <%= f.text_area :description, :class => 'fillWidth' %>
   </div>
   <div class="field">
-    <%= f.check_box :is_homepage %> <%= f.label :is_homepage %>
-  </div>
-  <div class="field">
-    <%= f.check_box :is_project %> <%= f.label :is_project %>
-  </div>
-  <div class="field">
-    <%= f.label :main_menu_item_id %>
-    <%= f.number_field :main_menu_item_id %>
+    <%= f.check_box :is_highlight %> <%= f.label :is_highlight %>
   </div>
   <div class="field">
     <%= f.label :template_id %>
     <%= f.collection_select(:template_id, @templates, :id, :template_name, :include_blank => true) %>
   </div>
-
-  <div class="field">
-    <%= f.label :upload_id, "Main Logo Upload" %>
-    <%= f.collection_select(:upload_id, Upload.all, :id, :myfile_file_name, :include_blank => true) %>
-  </div>
   <div class="field">
     <%= f.label :meta_description %>
     <%= f.text_field :meta_description, :class => "fillWidth" %>
   </div>
+
+  <p>Select Tag(s):</p>
+  <ul>
+    <% @tags.each do |tag| -%>
+      <li><%= check_box_tag "page[tag_ids][]", tag.id, tag_includes_page?(tag) -%> <%= tag.name -%></li>
+    <% end -%>
+  </ul>
+
   <br />
   <div class="actions">
     <%= f.submit button_text, :class => "btn btn-primary" %>

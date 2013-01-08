@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  url: MyString
+  linkable_id: 1
+  linkable_type: MyString
+  caption: MyString
+
+two:
+  title: MyString
+  url: MyString
+  linkable_id: 1
+  linkable_type: MyString
+  caption: MyString

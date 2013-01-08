@@ -1,0 +1,17 @@
+<h1>All Tags</h1>
+
+<ul>
+  <% @tags.each do |tag| %>
+    <li>
+      <h3><%= tag.name %></h3>
+      <%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>
+
+<br />
+<hr />
+
+<h3>New Tag</h3>
+<br />
+<%= render partial: "tags/form", locals: { tag: Tag.new } %>

@@ -41,6 +41,7 @@ class PagesController < ApplicationController
   # GET /pages/new.json
   def new
     @page = Page.new
+    @tags = Tag.all
     @templates = Template.all
 
     respond_to do |format|
@@ -60,6 +61,7 @@ class PagesController < ApplicationController
   # POST /pages.json
   def create
     @page = Page.new(params[:page])
+    @tags = Tag.all
 
     respond_to do |format|
       if @page.save

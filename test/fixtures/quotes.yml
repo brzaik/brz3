@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  author: MyString
+  quote: MyText
+  concatenated_quote: MyString
+  quoteable_id: 1
+  quoteable_type: MyString
+
+two:
+  author: MyString
+  quote: MyText
+  concatenated_quote: MyString
+  quoteable_id: 1
+  quoteable_type: MyString
