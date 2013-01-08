@@ -23,7 +23,8 @@ end
 gem 'jquery-rails'
 gem 'jquery-rails-cdn'
 gem 'twitter'
-gem "paperclip", "~> 2.7"
+gem 'paperclip'
+#gem "paperclip", "~> 2.7"
 gem 'devise'
 gem 'friendly_id'
 gem 'metamagic'

@@ -21,10 +21,6 @@
 </head>
 <body class="<%= user_signed_in? and current_user.view_as_admin? ? 'view-admin-true' : 'view-admin-false' %>">
   
-  <div class="container" style="position: relative;">
-    <%= image_tag("z-logo-top.png", :alt => "Brian R Zaik", :width => "100", :style => "position: absolute; top: 0px; left: 0px;") %>
-  </div>
-  
 
   <!--
   <header class="main-header">
@@ -34,7 +30,12 @@
   </header>
 -->
 
+  <%= render :partial => "elements/admin_menu" %>
+
   <header class="main-header">
+    <div class="container" style="position: relative;">
+      <%= image_tag("z-logo-top.png", :alt => "Brian R Zaik", :width => "100", :style => "position: absolute; top: 0px; left: 0px;") %>
+    </div>
     <div class="container">
       <div class="navbar">
         <div class="navbar-inner">
@@ -53,9 +54,6 @@
       </div>
     </div>
   </header>
-
-    
-  <%= render :partial => "elements/admin_menu" %>
 
   <% if flash[:notice] or alert %>
     <p class="alert" style="margin: 0px;">

@@ -24,6 +24,7 @@ class QuotesController < ApplicationController
   # GET /quotes/new
   # GET /quotes/new.json
   def new
+    @quoteable = find_quoteable
     @quote = Quote.new
 
     respond_to do |format|
@@ -40,7 +41,8 @@ class QuotesController < ApplicationController
   # POST /quotes
   # POST /quotes.json
   def create
-    @quote = Quote.new(params[:quote])
+    @quoteable = find_quoteable
+    @quote = @quoteable.quotes.build(params[:quote])
 
     respond_to do |format|
       if @quote.save
@@ -79,5 +81,16 @@ class QuotesController < ApplicationController
       format.html { redirect_to quotes_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def find_quoteable
+    params.each do |name, value|
+      if name =~ /(.+)_id$/
+        return $1.classify.constantize.find(value)
+      end
+    end
+    nil
   end
 end

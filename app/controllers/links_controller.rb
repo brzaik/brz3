@@ -24,6 +24,7 @@ class LinksController < ApplicationController
   # GET /links/new
   # GET /links/new.json
   def new
+    @linkable = find_linkable
     @link = Link.new
 
     respond_to do |format|
@@ -40,7 +41,8 @@ class LinksController < ApplicationController
   # POST /links
   # POST /links.json
   def create
-    @link = Link.new(params[:link])
+    @linkable = find_linkable
+    @link = @linkable.links.build(params[:link])
 
     respond_to do |format|
       if @link.save
@@ -79,5 +81,16 @@ class LinksController < ApplicationController
       format.html { redirect_to links_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def find_linkable
+    params.each do |name, value|
+      if name =~ /(.+)_id$/
+        return $1.classify.constantize.find(value)
+      end
+    end
+    nil
   end
 end
