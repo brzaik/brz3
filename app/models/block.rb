@@ -12,9 +12,13 @@ class Block < ActiveRecord::Base
   has_one :video, :as => :videoable, :dependent => :destroy
   has_one :image, :as => :imageable, :dependent => :destroy
   has_one :twitter_board, :dependent => :destroy
+  has_one :link, :dependent => :destroy
+  has_one :quote, :dependent => :destroy
 
   accepts_nested_attributes_for :richtext
   accepts_nested_attributes_for :video
   accepts_nested_attributes_for :image
   accepts_nested_attributes_for :twitter_board
+  accepts_nested_attributes_for :link
+  accepts_nested_attributes_for :quote
 end
