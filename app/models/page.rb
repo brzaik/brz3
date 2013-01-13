@@ -1,7 +1,7 @@
 class Page < ActiveRecord::Base
   extend FriendlyId
 
-  attr_accessible :description, :is_homepage, :is_project, :upload_id, :main_menu_item_id, :template_id, :title, :meta_description
+  attr_accessible :description, :is_highlight, :template_id, :title, :meta_description, :tag_ids
   attr_accessible :image_attributes
 
   belongs_to :template

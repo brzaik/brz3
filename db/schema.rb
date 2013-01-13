@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130108034553) do
+ActiveRecord::Schema.define(:version => 20130113192206) do
 
   create_table "blocks", :force => true do |t|
     t.string   "content_name"
@@ -65,6 +65,11 @@ ActiveRecord::Schema.define(:version => 20130108034553) do
   end
 
   add_index "pages", ["slug"], :name => "index_pages_on_slug", :unique => true
+
+  create_table "pages_tags", :id => false, :force => true do |t|
+    t.integer "page_id"
+    t.integer "tag_id"
+  end
 
   create_table "quotes", :force => true do |t|
     t.string   "author"

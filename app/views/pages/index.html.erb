@@ -4,13 +4,19 @@
   <tr>
     <th>Title</th>
     <th>Description</th>
+    <th>Tags</th>
     <th></th>
   </tr>
 
 <% @pages.each do |page| %>
   <tr>
-    <td><%= page.title %> <%= page.is_homepage? ? '(Homepage)' : '' %><%= page.is_project? ? '(Project)' : '' %></td>
+    <td><%= page.title %> <%= page.is_highlight? ? '(Highlight)' : '' %></td>
     <td><%= page.description %></td>
+    <td>
+      <% page.tags.each do |tag| %>
+        <%= tag.name %>&nbsp;&nbsp;
+      <% end %>
+    </td>
     <td><%= link_to 'Show', page %> <%= link_to 'Edit', edit_page_path(page) %> <%= link_to 'Destroy', page, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
   </tr>
 <% end %>

@@ -76,68 +76,6 @@
   }
 }
 
-// Navbar forms
-.navbar-form {
-  margin-bottom: 0; // remove default bottom margin
-  .clearfix();
-  input,
-  select,
-  .radio,
-  .checkbox {
-    .navbarVerticalAlign(30px); // Vertically center in navbar
-  }
-  input,
-  select {
-    display: inline-block;
-    margin-bottom: 0;
-  }
-  input[type="image"],
-  input[type="checkbox"],
-  input[type="radio"] {
-    margin-top: 3px;
-  }
-  .input-append,
-  .input-prepend {
-    margin-top: 6px;
-    white-space: nowrap; // preven two  items from separating within a .navbar-form that has .pull-left
-    input {
-      margin-top: 0; // remove the margin on top since it's on the parent
-    }
-  }
-}
-
-// Navbar search
-.navbar-search {
-  position: relative;
-  float: left;
-  .navbarVerticalAlign(28px); // Vertically center in navbar
-  margin-bottom: 0;
-  .search-query {
-    padding: 4px 9px;
-    #font > .sans-serif(13px, normal, 1);
-    color: @white;
-    background-color: @navbarSearchBackground;
-    border: 1px solid @navbarSearchBorder;
-    .box-shadow(~"inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15)");
-    .transition(none);
-
-    .placeholder(@navbarSearchPlaceholderColor);
-
-    // Focus states (we use .focused since IE7-8 and down doesn't support :focus)
-    &:focus,
-    &.focused {
-      padding: 5px 10px;
-      color: @grayDark;
-      text-shadow: 0 1px 0 @white;
-      background-color: @navbarSearchBackgroundFocus;
-      border: 0;
-      .box-shadow(0 0 3px rgba(0,0,0,.15));
-      outline: 0;
-    }
-  }
-}
-
-
 
 // FIXED NAVBAR
 // ------------

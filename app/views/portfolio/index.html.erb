@@ -6,3 +6,9 @@
     &nbsp;
   </div>
 </div>
+
+<% @pages.each do |page| %>
+  <div style="background: #000; color: #FFF;">
+    <h2><%= link_to page.title, page %></h2>
+  </div>
+<% end %>
