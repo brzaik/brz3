@@ -29,6 +29,7 @@ gem 'devise'
 gem 'friendly_id'
 gem 'metamagic'
 gem 'page_title_helper'
+gem 'kaminari'
 
 gem "letter_opener", :group => :development
 

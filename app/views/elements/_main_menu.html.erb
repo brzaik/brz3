@@ -13,7 +13,7 @@
         <ul class="nav pull-right">
           <li><%= link_to "Works", portfolio_path %></li>
           <li><a href="#">About</a></li>
-          <li><a href="#">Blog</a></li>
+          <li <% if controller.controller_name == 'blog_posts' %>class="active"<% end %>><%= link_to "Blog", blog_posts_path %></li>
           <li <% if controller.controller_name == 'contacts' %>class="active"<% end %>><%= link_to "Contact", new_contact_path %></li>
         </ul>
       </div>

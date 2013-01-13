@@ -1,5 +1,17 @@
 Brz3::Application.routes.draw do
 
+  resources :blog_categories
+
+  resources :blog_posts do
+    resources :blog_comments
+  end
+  
+  resources :blog_comments
+
+  resources :blog, :controller => 'blog_posts'
+  
+  match "blog_comments/moderate/:id" => "blog_comments#moderate"
+
   resources :quotes
 
   resources :links

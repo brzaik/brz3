@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130113192206) do
+ActiveRecord::Schema.define(:version => 20130113194237) do
 
   create_table "blocks", :force => true do |t|
     t.string   "content_name"
@@ -21,6 +21,33 @@ ActiveRecord::Schema.define(:version => 20130113192206) do
     t.string   "additional_tags"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+  end
+
+  create_table "blog_categories", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "blog_comments", :force => true do |t|
+    t.integer  "blog_post_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "moderated",       :default => false, :null => false
+    t.string   "name"
+    t.string   "email"
+    t.string   "website"
+    t.boolean  "posted_by_admin", :default => false, :null => false
+  end
+
+  create_table "blog_posts", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "blog_category_id"
+    t.string   "slug"
+    t.text     "excerpt"
   end
 
   create_table "contacts", :force => true do |t|

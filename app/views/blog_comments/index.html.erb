@@ -1,0 +1,16 @@
+<h1>Comments for Post <%= @blog_post.title %></h1>
+
+<% @blog_comments.each do |blog_comment| %>
+  <p><%= blog_comment.body %></p>
+  <p><%= blog_comment.name %></p>
+  <p><%= blog_comment.email %></p>
+  <p><%= blog_comment.website %></p>
+  <%= link_to 'Moderate', :action => :moderate, :id=> blog_comment %>
+  <%= link_to 'Edit', edit_blog_comment_path(blog_comment) %>
+  <%= link_to 'Destroy', blog_comment, :confirm => 'Are you sure?', :method => :delete %>
+  <hr />
+<% end %>
+
+<br />
+
+<%= link_to 'New Comment', new_blog_comment_path %>
