@@ -20,7 +20,16 @@
         <div class="span6">
           
           <div style="padding: 20px 5px 0px 30px;">
-            <h2><%= link_to page.title, page %></h2>
+            <h2>
+              <%= link_to page.title, page %>
+              <% if user_signed_in? %>
+                <small class="admin-color">
+                  <%= link_to edit_page_path(page) do %>
+                    <i class="icon-cog"></i>
+                  <% end %>
+                </small>
+              <% end %>
+            </h2>
             <p><%= page.description %></p>
             <p>
               <%= link_to page do %>view project<% end %>
@@ -55,8 +64,19 @@
       <div class="panel black" style="border-top: 0px;">
         <%= link_to page do %>
           <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
-          <h3 class="panel-block-title"><%= page.title %></h3>
         <% end %>
+        <h3 class="panel-block-title">
+          <%= link_to page do %>
+            <%= page.title %>
+            <% if user_signed_in? %>
+              <small class="admin-color">
+                <%= link_to edit_page_path(page) do %>
+                  <i class="icon-cog"></i>
+                <% end %>
+              </small>
+            <% end %>
+          <% end %>
+        </h3>
       </div>
 
     </div>

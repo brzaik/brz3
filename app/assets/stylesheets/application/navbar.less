@@ -50,9 +50,10 @@
     padding: ((@navbarHeight - @elementHeight) / 2 - 4) 20px ((@navbarHeight - @elementHeight) / 2 + 2);
     margin-left: -20px; // negative indent to left-align the text down the page
     font-size: 20px;
-    font-weight: 200;
+    font-weight: bold;
     line-height: 1;
     color: @navbarBrandColor;
+    text-decoration: none;
   }
   // Plain text in topbar
   .navbar-text {
@@ -136,11 +137,15 @@
   float: none;
   // Vertically center the text given @navbarHeight
   @elementHeight: 20px;
-  padding: ((@navbarHeight - @elementHeight) / 2) 10px ((@navbarHeight - @elementHeight) / 2 + 1);
+  padding: ((@navbarHeight - @elementHeight) / 2 + 4) 10px ((@navbarHeight - @elementHeight) / 2 + 1);
   line-height: 19px;
-  color: @navbarLinkColor;
   text-decoration: none;
-  text-shadow: 0 -1px 0 @navbarTextShadowColor;
+  color: @white;
+  font-weight: bold;
+
+  &:hover {
+    color: @black !important;
+  }
 }
 // Buttons
 .navbar .btn {
@@ -238,6 +243,8 @@
     top: -6px;
     left: 10px;
   }
+
+  a { text-decoration: none; }
 }
 // Menu position and menu caret support for dropups via extra dropup class
 .navbar-fixed-bottom .dropdown-menu {
@@ -347,5 +354,13 @@ header.main-header .navbar {
       text-shadow: 0 1px 0px @white;
       color: @black !important;
     }
+  }
+}
+
+#admin_bar.navbar { 
+  a { color: @black; }
+
+  .navbar-inner {
+    background-color: @adminOrange;
   }
 }
