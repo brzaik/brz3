@@ -1,5 +1,6 @@
 class PortfolioController < ApplicationController
   def index
-    @pages = Page.all
+    @highlighted_pages = Page.highlighted
+    @other_pages = Page.non_highlighted.limit(4)
   end
 end

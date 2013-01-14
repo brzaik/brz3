@@ -11,8 +11,8 @@ class Page < ActiveRecord::Base
   has_one :upload
   has_and_belongs_to_many :tags
 
-  scope :homepage, where(:is_homepage => true)
-  scope :non_homepages, where(:is_homepage => false)
+  scope :highlighted, where(:is_highlight => true)
+  scope :non_highlighted, where(:is_highlight => false)
 
   validates_uniqueness_of :title
 
