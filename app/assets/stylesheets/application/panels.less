@@ -1,0 +1,19 @@
+.panel {
+  background: @white;
+  .box-shadow(0px 0px 5px lighten(@grayLight, 10%));
+  border-top: solid 9px @black;
+
+  &.float-3-col {
+    float: left;
+    width: 30%;
+    margin: 1%;
+  }
+}
+
+.panel-inset-list {
+  border-bottom: solid 4px @black;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}

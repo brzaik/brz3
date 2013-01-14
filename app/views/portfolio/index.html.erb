@@ -1,14 +1,74 @@
 <div class="row-fluid">
-  <div class="span7">
-    <h1 style="margin: 40px 0px 40px 15px; font-size: 52px; line-height: 60px;">Hi there, I'm Brian. I design and build products aimed at making life more enjoyable.</h1>
+  <div class="span8">
+    <h1 style="margin: 40px 0px 40px 26px; font-size: 46px; line-height: 52px;">Hi there, I'm Brian. I design and build products aimed at making life more enjoyable.</h1>
   </div>
-  <div class="span5">
+  <div class="span4">
     &nbsp;
   </div>
 </div>
 
-<% @pages.each do |page| %>
-  <div style="background: #000; color: #FFF;">
-    <h2><%= link_to page.title, page %></h2>
+<br />
+
+<div class="panel">
+  <% @pages.each do |page| %>
+    
+    <div class="panel-inset-list">
+      
+      <div class="row-fluid">
+        <div class="span6">
+          
+          <div style="padding: 30px 5px 30px 30px;">
+            <h2><%= link_to page.title, page %></h2>
+            <p><%= page.description %></p>
+          </div>
+
+        </div>
+        <div class="span6">
+          <%= placeholdit_image_tag "480x260", text: "Project Image", background_color: '#fdba13', text_color: '#000' %>
+        </div>
+      </div>
+      
+    </div>
+
+  <% end %>
+</div>
+
+<br /><br /><br />
+
+<h3>More from <%= link_to "the Portfolio", portfolio_path %></h3>
+<div class="row-fluid">
+  <div class="span3">
+
+    <div class="panel" style="border-top: 0px;">
+      <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
+    </div>
+
   </div>
-<% end %>
+  <div class="span3">
+
+    <div class="panel" style="border-top: 0px;">
+      <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
+    </div>
+
+  </div>
+  <div class="span3">
+
+    <div class="panel" style="border-top: 0px;">
+      <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
+    </div>
+
+  </div>
+  <div class="span3">
+
+    <div class="panel" style="border-top: 0px;">
+      <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
+    </div>
+
+  </div>
+</div>
+
+<br />
+
+<h3>Common Tags:</h3>
+
+<br /><br /><br />
