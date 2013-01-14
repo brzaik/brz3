@@ -8,6 +8,24 @@
     width: 30%;
     margin: 1%;
   }
+
+  &.black {
+    background: @black;
+
+    * { color: @white; }
+  }
+
+  a { 
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .panel-block-title {
+    padding: 6px 10px;
+  }
 }
 
 .panel-inset-list {
@@ -15,5 +33,20 @@
 
   &:last-child {
     border-bottom: none;
+  }
+
+  h2 {
+    margin-bottom: 0.5em;
+    font-size: 28px;
+
+    a { 
+      color: @black;
+      text-decoration: none;
+      
+      &:hover {
+        color: @linkColorHover;
+        text-decoration: underline;
+      }
+    }
   }
 }

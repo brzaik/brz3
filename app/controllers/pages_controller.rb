@@ -53,6 +53,7 @@ class PagesController < ApplicationController
   # GET /pages/1/edit
   def edit
     @page = Page.find_by_slug(params[:id])
+    @tags = Tag.all
     @templates = Template.all
     @uploads = Upload.all
   end

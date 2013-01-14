@@ -8,6 +8,8 @@
 
 p {
   margin: 0 0 @baseLineHeight / 2;
+  line-height: 1.4em;
+
   small {
     font-size: @baseFontSize - 2;
     color: @grayLight;
@@ -39,6 +41,15 @@ h1 {
   line-height: @baseLineHeight * 2.5;
   small {
     font-size: 18px;
+  }
+
+  &.stubby-header {
+    color: @black;
+    text-shadow: 0 0 0;
+    text-transform: uppercase;
+    #font > .sans-serif(18px, 700, @baseLineHeight);
+
+    &.default-padding { padding: 0px 30px 16px 30px; }
   }
 }
 h2 {

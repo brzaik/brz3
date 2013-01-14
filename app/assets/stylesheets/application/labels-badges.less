@@ -7,16 +7,16 @@
   font-size: @baseFontSize * .846;
   font-weight: bold;
   line-height: 14px; // ensure proper line-height if floated
-  color: @white;
+  color: @gray;
   vertical-align: baseline;
   white-space: nowrap;
-  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-  background-color: @grayLight;
+  background-color: @grayLighter;
+  text-transform: uppercase;
 }
 // Set unique padding and border-radii
 .label {
   padding: 1px 4px 2px;
-  .border-radius(3px);
+  margin-right: 4px;
 }
 .badge {
   padding: 1px 9px 2px;
@@ -25,9 +25,11 @@
 
 // Hover state, but only for links
 a {
+  &.label, &.badge { text-decoration: none; }
   &.label:hover,
   &.badge:hover {
     color: @white;
+    background: @linkColorHover;
     text-decoration: none;
     cursor: pointer;
   }

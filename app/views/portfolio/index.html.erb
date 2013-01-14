@@ -1,6 +1,6 @@
 <div class="row-fluid">
   <div class="span8">
-    <h1 style="margin: 40px 0px 40px 26px; font-size: 46px; line-height: 52px;">Hi there, I'm Brian. I design and build products aimed at making life more enjoyable.</h1>
+    <h1 style="margin: 40px 0px 40px 30px; font-size: 46px; line-height: 52px;">Hi there, I'm Brian. I design and build products aimed at making life more enjoyable.</h1>
   </div>
   <div class="span4">
     &nbsp;
@@ -8,6 +8,8 @@
 </div>
 
 <br />
+
+<h1 class="stubby-header default-padding">Selected Works:</h1>
 
 <div class="panel">
   <% @highlighted_pages.each do |page| %>
@@ -24,7 +26,9 @@
 
         </div>
         <div class="span6">
-          <%= placeholdit_image_tag "480x260", text: "Project Image", background_color: '#fdba13', text_color: '#000' %>
+          <%= link_to page do %>
+            <%= placeholdit_image_tag "480x260", text: "Project Image", background_color: '#fdba13', text_color: '#000' %>
+          <% end %>
         </div>
       </div>
       
@@ -35,15 +39,17 @@
 
 <br /><br /><br />
 
-<h3>More from <%= link_to "the Portfolio", portfolio_path %></h3>
+<h1 class="stubby-header default-padding">More from <%= link_to "the Portfolio", portfolio_path %></h1>
 <div class="row-fluid">
   
   <% @other_pages.each do |page| %>
     <div class="span3">
 
-      <div class="panel" style="border-top: 0px;">
-        <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
-        <h3><%= page.title %></h3>
+      <div class="panel black" style="border-top: 0px;">
+        <%= link_to page do %>
+          <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
+          <h3 class="panel-block-title"><%= page.title %></h3>
+        <% end %>
       </div>
 
     </div>
@@ -52,6 +58,15 @@
 
 <br />
 
-<h3>Common Tags:</h3>
+<div class="row-fluid">
+  <div class="span3">
+    <h1 class="stubby-header default-padding">Common Tags:</h1>
+  </div>
+  <div class="span9">
+    <% @popular_tags.each do |tag| %>
+      <%= link_to tag.name, tag, :class => "label" %>
+    <% end %>
+  </div>
+</div>
 
 <br /><br /><br />
