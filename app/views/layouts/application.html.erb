@@ -23,7 +23,7 @@
 
   <%= render :partial => "elements/admin_menu" %>
 
-  <%= render :partial => "elements/main_menu" %>
+  <%= render :partial => "elements/header" %>
 
   <% if flash[:notice] or alert %>
     <p class="alert" style="margin: 0px;">
@@ -40,7 +40,27 @@
 
   <footer class="main-footer">
     <div class="container">
-      <h1>Footer</h1>
+      
+      <div class="row-fluid">
+
+        <div class="span9">
+          <h3><b>Brian Zaik</b> is a User Experience (UX) designer and developer who gets out of bed each morning to create delightful products. He is energized by opportunities to grow software from conceptual design straight through to interface execution.</h3>
+          <h3>Brian works at <a href="http://sandia.gov">Sandia National Labs</a>. He is also a Managing Partner of <a href="#">Innio</a>.</h3>
+          <br />
+          <%= render :partial => "elements/main_menu" %>
+
+        </div>
+
+        <div class="span3">
+          Image
+        </div>
+
+      </div>
+
+      <hr />
+
+      
+
     </div>
   </footer>
 

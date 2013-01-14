@@ -19,9 +19,16 @@
       <div class="row-fluid">
         <div class="span6">
           
-          <div style="padding: 30px 5px 30px 30px;">
+          <div style="padding: 20px 5px 0px 30px;">
             <h2><%= link_to page.title, page %></h2>
             <p><%= page.description %></p>
+            <p>
+              <%= link_to page do %>view project<% end %>
+              
+              <%= link_to "#", :style => "margin-left: 35px;" do %>
+                <%= page.tags.count %> tag<%= page.tags.count == 1 ? '' : 's' %>
+              <% end %>
+            </p>
           </div>
 
         </div>
@@ -39,7 +46,7 @@
 
 <br /><br /><br />
 
-<h1 class="stubby-header default-padding">More from <%= link_to "the Portfolio", portfolio_path %></h1>
+<h1 class="stubby-header default-padding">More from <%= link_to "the Portfolio", portfolio_path %>:</h1>
 <div class="row-fluid">
   
   <% @other_pages.each do |page| %>
