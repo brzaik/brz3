@@ -18,6 +18,7 @@ class ColumnsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
+      format.js
       format.json { render :json => @column }
     end
   end
@@ -36,7 +37,7 @@ class ColumnsController < ApplicationController
 
     respond_to do |format|
       if @column.save
-        format.html { redirect_to @row.page, :notice => 'Column was successfully created.' }
+        format.html { redirect_to @row.section.page, :notice => 'Column was successfully created.' }
         format.json { render :json => @column, :status => :created, :location => @column }
       else
         format.html { render :action => "new" }
@@ -53,7 +54,7 @@ class ColumnsController < ApplicationController
 
     respond_to do |format|
       if @column.update_attributes(params[:column])
-        format.html { redirect_to @row.page, :notice => 'Column was successfully updated.' }
+        format.html { redirect_to @row.section.page, :notice => 'Column was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
@@ -66,7 +67,7 @@ class ColumnsController < ApplicationController
   # DELETE /columns/1.json
   def destroy
     @column = Column.find(params[:id])
-    @page = @column.row.page
+    @page = @column.row.section.page
     @column.destroy
 
     respond_to do |format|
