@@ -14,6 +14,7 @@ class RowsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
+      format.js
       format.json { render :json => @row }
     end
   end

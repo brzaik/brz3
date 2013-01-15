@@ -7,10 +7,10 @@
           <span class="caret"></span>
         <% end %>
         <ul class="dropdown-menu">
-          <li><%= link_to "Edit", edit_page_row_path(row.page, row) %></li>
+          <li><%= link_to "Edit", edit_section_row_path(row.section, row) %></li>
           <li><%= link_to "Add Column", new_row_column_path(row) %></li>
           <% if row.columns.count == 0 %>
-            <li><%= link_to 'Remove Row', [row.page, row], :confirm => "Are you sure you wish to remove this row?", :method => :delete %></li>
+            <li><%= link_to 'Remove Row', [row.section, row], :confirm => "Are you sure you wish to remove this row?", :method => :delete %></li>
           <% end %>
         </ul>
       </div>

@@ -1,8 +1,8 @@
 class BlocksController < ApplicationController
-  before_filter :get_section, :authenticate_user!
+  before_filter :get_column, :authenticate_user!
   
-  def get_section
-    @section = Section.find(params[:section_id])
+  def get_column
+    @column = Column.find(params[:column_id])
   end
 
 
@@ -21,7 +21,7 @@ class BlocksController < ApplicationController
   # GET /blocks/1.json
   def show
     @block = Block.find(params[:id])
-    @block.section = @section
+    @block.column = @column
 
     respond_to do |format|
       format.html # show.html.erb
@@ -33,7 +33,7 @@ class BlocksController < ApplicationController
   # GET /blocks/new.json
   def new
     @block = Block.new
-    @block.section = @section
+    @block.column = @column
 
     respond_to do |format|
       format.html # new.html.erb
@@ -50,8 +50,8 @@ class BlocksController < ApplicationController
   # POST /blocks.json
   def create
     @block = Block.new(params[:block])
-    @block.section = @section
-    @page = @section.page
+    @block.column = @column
+    @page = @column.row.section.page
 
     respond_to do |format|
       if @block.save
@@ -68,8 +68,8 @@ class BlocksController < ApplicationController
   # PUT /blocks/1.json
   def update
     @block = Block.find(params[:id])
-    @block.section = @section
-    @page = @section.page
+    @block.column = @column
+    @page = @column.row.section.page
 
     respond_to do |format|
       if @block.update_attributes(params[:block])
@@ -86,7 +86,7 @@ class BlocksController < ApplicationController
   # DELETE /blocks/1.json
   def destroy
     @block = Block.find(params[:id])
-    @page = @block.section.page
+    @page = @block.column.row.section.page
     @block.destroy
 
     respond_to do |format|
