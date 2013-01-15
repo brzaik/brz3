@@ -1,0 +1,25 @@
+<h1>Listing rows</h1>
+
+<table>
+  <tr>
+    <th>Page</th>
+    <th>Position</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rows.each do |row| %>
+  <tr>
+    <td><%= row.page_id %></td>
+    <td><%= row.position %></td>
+    <td><%= link_to 'Show', row %></td>
+    <td><%= link_to 'Edit', edit_row_path(row) %></td>
+    <td><%= link_to 'Destroy', row, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Row', new_row_path %>

@@ -3,5 +3,5 @@ class Section < ActiveRecord::Base
   default_scope order('position ASC')
 
   belongs_to :page
-  has_many :blocks
+  has_many :rows
 end

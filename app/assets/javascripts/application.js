@@ -12,3 +12,10 @@
 //
 //= require jquery_ujs
 //= require_tree ./application
+
+
+$(document).ready(function() {
+  if ( $("#flash-banner").html() !== "" ) {
+    $("#flash-banner").delay(3000).hide("slow");
+  }
+});

@@ -1,0 +1,24 @@
+<div class="page-row <%= row.additional_styles %>" <%= row.additional_tags %>>
+  <% if current_user %>
+    <div class="admin-links">
+      <div class="btn-group">
+        <%= link_to "#", :class => "btn btn-mini dropdown-toggle", "data-toggle" => "dropdown" do %>
+          Row
+          <span class="caret"></span>
+        <% end %>
+        <ul class="dropdown-menu">
+          <li><%= link_to "Edit", edit_page_row_path(row.page, row) %></li>
+          <li><%= link_to "Add Column", new_row_column_path(row) %></li>
+          <% if row.columns.count == 0 %>
+            <li><%= link_to 'Remove Row', [row.page, row], :confirm => "Are you sure you wish to remove this row?", :method => :delete %></li>
+          <% end %>
+        </ul>
+      </div>
+      <br />
+    </div>
+  <% end %>
+
+  <div class="row-fluid">
+    <%= render row.columns %>
+  </div>
+</div>

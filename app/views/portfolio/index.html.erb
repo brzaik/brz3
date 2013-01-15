@@ -1,6 +1,6 @@
 <div class="row-fluid">
   <div class="span8">
-    <h1 style="margin: 40px 0px 40px 30px; font-size: 46px; line-height: 52px;">Hi there, I'm Brian. I design and build products aimed at making life more enjoyable.</h1>
+    <h1 style="margin: 50px 0px 40px 30px; font-size: 46px; line-height: 52px;">Hi there, I'm Brian. I design and build products aimed at making life more enjoyable.</h1>
   </div>
   <div class="span4">
     &nbsp;
@@ -85,15 +85,13 @@
 
 <br />
 
-<div class="row-fluid">
-  <div class="span3">
-    <h1 class="stubby-header default-padding">Common Tags:</h1>
-  </div>
-  <div class="span9">
+<h1 class="stubby-header default-padding">
+  Common Tags:
+  <span style="padding-left: 16px;">
     <% @popular_tags.each do |tag| %>
       <%= link_to tag.name, tag, :class => "label" %>
     <% end %>
-  </div>
-</div>
+  </span>
+</h1>
 
 <br /><br /><br />

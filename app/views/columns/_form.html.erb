@@ -1,19 +1,25 @@
-<%= form_for([@page, @section]) do |f| %>
-  <% if @section.errors.any? %>
+<%= form_for [@row, @column] do |f| %>
+  <% if @column.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@section.errors.count, "error") %> prohibited this row from being saved:</h2>
+      <h2><%= pluralize(@column.errors.count, "error") %> prohibited this column from being saved:</h2>
 
       <ul>
-      <% @section.errors.full_messages.each do |msg| %>
+      <% @column.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
+  
+  <div class="field">
+    <%= f.label :position %>
+    <%= f.number_field :position %>
+  </div>
 
   <div class="field">
-    <%= f.label :position %><br />
-    <%= f.number_field :position %>
+    <%= f.label :span_width %>
+    <p>This should be a whole number between 1 (smallest percentage of page width) and 12 (largest percentage of page width).</p>
+    <%= f.number_field :span_width, :min => 1, :max => 12 %>
   </div>
 
   <div class="field">

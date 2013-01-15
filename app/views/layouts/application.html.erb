@@ -26,10 +26,10 @@
   <%= render :partial => "elements/header" %>
 
   <% if flash[:notice] or alert %>
-    <p class="alert" style="margin: 0px;">
+    <div id="flash-banner" class="alert alert-block alert-black">
       <%= flash[:notice] %>
       <%= alert %>
-    </p>
+    </div>
   <% end %>
 
   <div id="main" class="container">

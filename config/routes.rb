@@ -44,11 +44,19 @@ Brz3::Application.routes.draw do
     resources :sections
   end
 
-  match "portfolio" => "portfolio#index"
+  resources :sections do
+    resources :rows
+  end
 
-  resources :sections do 
+  resources :rows do
+    resources :columns
+  end
+
+  resources :columns do
     resources :blocks
   end
+
+  match "portfolio" => "portfolio#index"
 
   resources :contacts
 

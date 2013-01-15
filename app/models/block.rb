@@ -1,12 +1,12 @@
 class Block < ActiveRecord::Base
-  attr_accessible :section_id, :content_name, :position, :additional_styles, :additional_tags
+  attr_accessible :column_id, :content_name, :position, :additional_styles, :additional_tags
   attr_accessible :richtext_attributes
   attr_accessible :video_attributes
   attr_accessible :image_attributes
   attr_accessible :twitter_board_attributes
   default_scope order('position ASC')
 
-  belongs_to :section
+  belongs_to :column
   
   has_one :richtext, :dependent => :destroy
   has_one :video, :as => :videoable, :dependent => :destroy
