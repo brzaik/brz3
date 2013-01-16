@@ -5,10 +5,8 @@
     <%= render page.sections %>
 
     <% if current_user %>
-      <div class="admin-links">
-        <%= link_to "Add Section Here", new_page_section_path(page), remote: true, class: "btn btn-mini" %>
-        <br /><br />
-      </div>
+      <br />
+      <%= link_to "Add Section", new_page_section_path(page), remote: true, class: "add-link-block admin-links" %>
     <% end %>
   </div>
 </div>
