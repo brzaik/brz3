@@ -11,11 +11,32 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery_ujs
-//= require_tree ./application
+//= require application/bootstrap-dropdown
+//= require application/bootstrap-tooltip
+//= require application/bootstrap-popover
+//= require application/lightzap
 
 
 $(document).ready(function() {
+  
   if ( $("#flash-banner").html() !== "" ) {
     $("#flash-banner").delay(3000).hide("slow");
   }
+
+  $("body").on("click", "a.btnCancel", function(e) {
+    e.preventDefault();
+    $(this).closest(".panel.admin").remove();
+  });
+
+  $('.editFormTrigger').popover({
+    html : true,
+    title: function() {
+      return $(this).attr('data-po-title');
+    },
+    content: function() {
+      var columnId = $(this).attr('data-column');
+      return $("#column_" + columnId + "_editForm").html();
+    }
+  });
+
 });

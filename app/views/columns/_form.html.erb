@@ -1,10 +1,10 @@
-<%= form_for([@row, @column], remote: true) do |f| %>
-  <% if @column.errors.any? %>
+<%= form_for([row, column], remote: true) do |f| %>
+  <% if column.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@column.errors.count, "error") %> prohibited this column from being saved:</h2>
+      <h2><%= pluralize(column.errors.count, "error") %> prohibited this column from being saved:</h2>
 
       <ul>
-      <% @column.errors.full_messages.each do |msg| %>
+      <% column.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -34,6 +34,6 @@
 
   <br />
   <div class="actions">
-    <%= f.submit button_text, :class => "btn btn-primary" %>
+    <%= f.submit button_text, class: "btn btn-primary" %> <%= link_to "Cancel", "#", class: "btn btnCancel" %>
   </div>
 <% end %>

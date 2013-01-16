@@ -1,2 +1,2 @@
-$("#page-section-<%= @section.id %>").append("<%= escape_javascript(render :partial => 'rows/form', :locals => { :button_text => 'Create Row' }) %>");
+$("#page-section-<%= @section.id %>").append("<div class='panel default-padding admin'><%= escape_javascript(render :partial => 'rows/form', :locals => { :button_text => 'Create Row' }) %></div>");
 
