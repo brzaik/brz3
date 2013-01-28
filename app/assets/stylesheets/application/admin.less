@@ -6,7 +6,7 @@ a.add-link-block {
   display: block;
   text-align: center;
   padding: 20px;
-  background: @grayLighter;
+  background: lighten(@adminOrange, 30%);
   font-size: 1.25em;
 
   &:hover {
@@ -19,15 +19,16 @@ a.add-link-block {
   
   .admin-links-floating {
     position: absolute;
+    background: @black;
     top: 0px;
     right: 0px;
-    display: none;
-  }
+    padding: 1px 5px;
 
-  &:hover {
-    .admin-links-floating {
-      display: block;
+    > a { 
+      color: @adminOrange;
+      margin: 0px 2px;
     }
+    .caption { color: @grayLight; padding-right: 8px; }
   }
 }
 
@@ -38,25 +39,24 @@ a.add-link-block {
 }
 
 body.view-admin-true {
+  .page-section {
+    background: @grayLight;
+
+    .admin-padding { padding: @adminPaddingAll; }
+  }
+
   .page-row {
-    border-bottom: dotted 2px @grayLight;
+    background: @gray;
     padding-bottom: 24px;
     margin-bottom: 24px;
 
-    &:first-child {
-      border-top: dotted 2px @grayLight;
-      padding-top: 24px;
-    }
+    .admin-padding { padding: @adminPaddingAll; }
   }
   
   .column {
     background: @grayDarker;
 
-    .admin-padding { padding: 14px; }
-
-    &:hover {
-      background: lighten(@grayDark, 5%);
-    }
+    .admin-padding { padding: @adminPaddingAll; }
   }
 
   .block {
@@ -64,11 +64,7 @@ body.view-admin-true {
     border: solid 1px #999;
     margin-bottom: 18px;
 
-    .admin-padding { padding: 14px; }
-
-    &:hover {
-      border-color: @white;
-    }
+    .admin-padding { padding: @adminPaddingAll; }
   }
 }
 body.view-admin-false {

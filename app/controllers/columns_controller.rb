@@ -55,9 +55,11 @@ class ColumnsController < ApplicationController
     respond_to do |format|
       if @column.update_attributes(params[:column])
         format.html { redirect_to @row.section.page, :notice => 'Column was successfully updated.' }
+        format.js { }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
+        format.js { }
         format.json { render :json => @column.errors, :status => :unprocessable_entity }
       end
     end

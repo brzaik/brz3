@@ -14,6 +14,7 @@
 //= require application/bootstrap-dropdown
 //= require application/bootstrap-tooltip
 //= require application/bootstrap-popover
+//= require application/bootstrapx-clickover
 //= require application/lightzap
 
 
@@ -28,14 +29,16 @@ $(document).ready(function() {
     $(this).closest(".panel.admin").remove();
   });
 
-  $('.editFormTrigger').popover({
+  $('.editFormTrigger').clickover({
     html : true,
+    placement: 'left',
     title: function() {
       return $(this).attr('data-po-title');
     },
     content: function() {
-      var columnId = $(this).attr('data-column');
-      return $("#column_" + columnId + "_editForm").html();
+      var object_type = $(this).attr('data-object-type');
+      var object_id = $(this).attr('data-object-id');
+      return $("#" + object_type + "_" + object_id + "_editForm").html();
     }
   });
 

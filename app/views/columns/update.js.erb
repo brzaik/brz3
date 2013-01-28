@@ -1,0 +1,2 @@
+$("#column-<%= @column.id %>").remove();
+$("#page-row-<%= @row.id %>").append("<%= escape_javascript(render @column) %>");

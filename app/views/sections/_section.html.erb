@@ -1,24 +1,26 @@
-<div id="page-section-<%= section.id %>" class="page-section <%= section.additional_styles %>" <%= section.additional_tags %>>
-  <% if current_user %>
-    <div class="admin-links">
-      <div class="btn-group">
-        <%= link_to "#", :class => "btn btn-mini dropdown-toggle", "data-toggle" => "dropdown" do %>
-          Section
-          <span class="caret"></span>
+<div id="page-section-<%= section.id %>" class="page-section <%= section.additional_styles %> <% if current_user %>add-floating-admin-links<% end %>" <%= section.additional_tags %>>
+  <div class="admin-padding">
+    <% if current_user %>
+      <div class="admin-links admin-links-floating">
+        <span class="caption">Section</span>
+        <%= link_to "#", class: "editFormTrigger", "data-object-type" => "section", "data-object-id" => section.id, "data-po-title" => "Update Section" do %>
+          <i class="icon-cog"></i>
         <% end %>
-        <ul class="dropdown-menu">
-          <li><%= link_to "Edit", edit_page_section_path(section.page, section) %></li>
-          <% if section.rows.count == 0 %>
-            <li><%= link_to 'Remove Section', [section.page, section], :confirm => "Are you sure you wish to remove this section?", :method => :delete %></li>
+        <% if section.rows.count == 0 %>
+          <%= link_to [section.page, section], :confirm => "Are you sure you wish to remove this section?", :method => :delete do %>
+            <i class="icon-remove-sign"></i>
           <% end %>
-        </ul>
+        <% end %>
       </div>
-      <br />
-    </div>
-  <% end %>
+    <% end %>
 
-  <div>
-    <%= render section.rows %>
-    <%= link_to "Add Row", new_section_row_path(section), remote: true, class: "add-link-block admin-links" unless current_user.nil? %>
+    <div id="section_<%= section.id %>_editForm" class="hide">
+      <%= render partial: "sections/form", locals: { button_text: 'Save', section: section, page: section.page } %>
+    </div>
+
+    <div>
+      <%= render section.rows %>
+      <%= link_to "Add Row", new_section_row_path(section), remote: true, class: "add-link-block admin-links" unless current_user.nil? %>
+    </div>
   </div>
 </div>
