@@ -44,6 +44,11 @@ class BlocksController < ApplicationController
   # GET /blocks/1/edit
   def edit
     @block = Block.find(params[:id])
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.js { }
+    end
   end
 
   # POST /blocks

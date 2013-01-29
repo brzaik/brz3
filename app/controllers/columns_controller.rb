@@ -27,6 +27,11 @@ class ColumnsController < ApplicationController
   def edit
     @column = Column.find(params[:id])
     @row = @column.row
+
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end
   end
 
   # POST /columns

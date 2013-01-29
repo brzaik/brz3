@@ -1,12 +1,12 @@
 <div id="page-panel-<%= page.id %>" class="panel">
   <div class="default-padding">
     <h1><%= page.title %></h1>
-
-    <%= render page.sections %>
-
-    <% if current_user %>
-      <br />
-      <%= link_to "Add Section", new_page_section_path(page), remote: true, class: "add-link-block admin-links" %>
-    <% end %>
   </div>
+
+  <%= render page.sections %>
+
+  <% if current_user %>
+    <br />
+    <%= link_to "Add Section", new_page_section_path(page), remote: true, class: "add-link-block admin-links" %>
+  <% end %>
 </div>

@@ -1,28 +1,33 @@
-<div id="column-<%= column.id %>" class="column span<%= column.span_width %> <%= column.additional_styles %> <% if current_user %>add-floating-admin-links<% end %>" <%= column.additional_tags %>>
-  <div class="admin-padding">
-    <% if current_user %>
-      <div class="admin-links admin-links-floating">
-        <span class="caption">Column</span>
-        <%= link_to "#", class: "editFormTrigger", "data-object-type" => "column", "data-object-id" => column.id, "data-po-title" => "Update Column" do %>
-          <i class="icon-cog"></i>
-        <% end %>
-        <% if column.blocks.count == 0 %>
-          <%= link_to [column.row, column], :confirm => "Are you sure you wish to delete this column?", :method => :delete do %>
-            <i class="icon-remove-sign"></i>
-          <% end %>
-        <% end %>
-      </div>
+<div id="column-<%= column.id %>" class="span<%= column.span_width %> <%= column.additional_styles %> <% if current_user %>admin-block<% end %>" <%= column.additional_tags %>>
+
+  <% if current_user %>
+  <div class="admin-controls top">
+    <span class="caption">Column</span>
+    <%= link_to edit_row_column_path(column.row, column), class: "editBtn", remote: true do %>
+      <i class="icon-cog"></i>
     <% end %>
-
-    <div id="column_<%= column.id %>_editForm" class="hide">
-      <%= render partial: "columns/form", locals: { button_text: 'Save', column: column, row: column.row } %>
-    </div>
-
-    <%= render column.blocks %>
-
-    <% if current_user %>
-      <br />
-      <%= link_to "Add Block", new_column_block_path(column), remote: true, class: "add-link-block admin-links" %>
+    <% if column.blocks.count == 0 %>
+      <%= link_to [column.row, column], :confirm => "Are you sure you wish to delete this column?", :method => :delete do %>
+        <i class="icon-remove-sign"></i>
+      <% end %>
     <% end %>
   </div>
+  <% end %>
+
+  <%= render column.blocks %>
+
+  <% if current_user %>
+  <div class="admin-controls bottom">
+    <%= link_to "Add Block", "#", class: "addFormTrigger", "data-object-type" => "column", "data-object-id" => column.id, "data-po-title" => "Add Block Here" %>
+  </div>
+
+  <div id="column_<%= column.id %>_addForm" class="hide">
+    <%= render partial: "blocks/form", locals: { button_text: 'Add Block', block: Block.new, column: column } %>
+  </div>
+
+  <div id="column_<%= column.id %>_editForm" class="hide">
+    <%= render partial: "columns/form", locals: { button_text: 'Save', column: column, row: column.row } %>
+  </div>
+  <% end %>
+
 </div>

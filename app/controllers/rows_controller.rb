@@ -23,6 +23,11 @@ class RowsController < ApplicationController
   def edit
     @row = Row.find(params[:id])
     @section = @row.section
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.js
+    end
   end
 
   # POST /rows

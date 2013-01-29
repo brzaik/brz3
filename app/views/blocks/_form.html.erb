@@ -1,10 +1,10 @@
-<%= form_for([@page, @column, setup_richtext_block(@block)], :html => { :multipart => true }) do |f| %>
-  <% if @block.errors.any? %>
+<%= form_for([column, setup_richtext_block(block)], :html => { :multipart => true }) do |f| %>
+  <% if block.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@block.errors.count, "error") %> prohibited this block from being saved:</h2>
+      <h2><%= pluralize(block.errors.count, "error") %> prohibited this block from being saved:</h2>
 
       <ul>
-      <% @block.errors.full_messages.each do |msg| %>
+      <% block.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -49,7 +49,7 @@
   </div>
   <br />
   <div class="actions">
-    <%= f.submit button_text, class: "btn btn-primary" %> <%= link_to "Cancel", "#", class: "btn btnCancel" %>
+    <%= f.submit button_text, class: "btn btn-primary" %>
   </div>
 <% end %>
 

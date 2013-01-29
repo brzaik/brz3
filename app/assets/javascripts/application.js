@@ -42,4 +42,46 @@ $(document).ready(function() {
     }
   });
 
+  $('.addFormTrigger').clickover({
+    html : true,
+    placement: 'bottom',
+    title: function() {
+      return $(this).attr('data-po-title');
+    },
+    content: function() {
+      var object_type = $(this).attr('data-object-type');
+      var object_id = $(this).attr('data-object-id');
+      return $("#" + object_type + "_" + object_id + "_addForm").html();
+    }
+  });
+
+  turnOnHoverEvents();
+
+  // freeze state in place:
+  $('.editBtn').click(function(e) {
+    turnOffHoverEvents();
+    $('.admin-controls').hide();
+    $(this).closest('.admin-block').addClass('admin-shade');
+    $(this).parents('.admin-block').each(function() {
+      $(this).addClass('solid-shadow');
+      $(this).find('.admin-controls').show();
+    });
+    //$(this).removeClass('solid-shadow');
+  });
+
 });
+
+
+function turnOnHoverEvents() {
+  $('body').on('mouseenter', '.admin-block', function() {
+      $(this).find("> .admin-controls").fadeIn("fast");
+  });
+  $('body').on('mouseleave', '.admin-block', function() {
+      $(this).find("> .admin-controls").fadeOut("fast");
+  });
+}
+
+function turnOffHoverEvents() {
+  $('body').off('mouseenter', '.admin-block');
+  $('body').off('mouseleave', '.admin-block');
+}
