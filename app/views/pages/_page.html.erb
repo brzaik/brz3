@@ -7,6 +7,6 @@
 
   <% if current_user %>
     <br />
-    <%= link_to "Add Section", new_page_section_path(page), remote: true, class: "add-link-block admin-links" %>
+    <%= link_to "Add Section", new_page_section_path(page), class: 'editBtn', remote: true %>
   <% end %>
 </div>

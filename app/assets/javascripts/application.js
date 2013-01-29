@@ -60,13 +60,10 @@ $(document).ready(function() {
   // freeze state in place:
   $('.editBtn').click(function(e) {
     turnOffHoverEvents();
-    $('.admin-controls').hide();
     $(this).closest('.admin-block').addClass('admin-shade');
     $(this).parents('.admin-block').each(function() {
       $(this).addClass('solid-shadow');
-      $(this).find('.admin-controls').show();
     });
-    //$(this).removeClass('solid-shadow');
   });
 
 });

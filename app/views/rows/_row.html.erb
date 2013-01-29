@@ -18,9 +18,7 @@
 
   <% if current_user %>
     <div class="admin-controls bottom">
-      <%= link_to "#", class: "addFormTrigger add-link-block admin-links", "data-object-type" => "row", "data-object-id" => row.id, "data-po-title" => "Add Column to Row" do %>
-        <i class="icon-plus-sign"></i> Add Column Here
-      <% end %>
+      <%= link_to "Add Column", new_row_column_path(row), class: 'editBtn', remote: true %>
     </div>
 
     <div id="row_<%= row.id %>_addForm" class="hide">
