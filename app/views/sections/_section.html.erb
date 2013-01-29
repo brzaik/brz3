@@ -3,7 +3,7 @@
   <% if current_user %>
   <div class="admin-controls top">
     <span class="caption">Section</span>
-    <%= link_to "#", class: "editFormTrigger", "data-object-type" => "section", "data-object-id" => section.id, "data-po-title" => "Update Section" do %>
+    <%= link_to edit_page_section_path(section.page, section), class: 'editBtn', remote: true do %>
       <i class="icon-cog"></i>
     <% end %>
     <% if section.rows.count == 0 %>

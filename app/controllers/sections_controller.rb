@@ -23,6 +23,11 @@ class SectionsController < ApplicationController
   def edit
     @section = Section.find(params[:id])
     @page = @section.page
+
+    respond_to do |format|
+      format.html # edit.html.erb
+      format.js {}
+    end
   end
 
   # POST /sections

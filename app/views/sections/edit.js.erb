@@ -1,0 +1,3 @@
+$("#admin-drawer .form-block").html("<%= escape_javascript(render partial: 'sections/form', locals: { section: @section, page: @page, button_text: 'Update Section' }) %>");
+$("#admin-drawer .form-title").text('Edit Section');
+$("#admin-drawer").show();
