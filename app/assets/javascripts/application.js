@@ -57,13 +57,21 @@ $(document).ready(function() {
 
   turnOnHoverEvents();
 
-  // freeze state in place:
-  $('.editBtn').click(function(e) {
+  $('body').on('click', '.editBtn', function(e) {
+    // freeze state in place:
     turnOffHoverEvents();
     $(this).closest('.admin-block').addClass('admin-shade');
     $(this).parents('.admin-block').each(function() {
       $(this).addClass('solid-shadow');
     });
+  });
+
+  $('body').on('click', '.cancelBtn', function(e) {
+    e.preventDefault();
+    turnOnHoverEvents();
+    $('.admin-block').removeClass('admin-shade').removeClass('solid-shadow');
+    $('.admin-controls').hide();
+    $('#admin-drawer').hide();
   });
 
 });

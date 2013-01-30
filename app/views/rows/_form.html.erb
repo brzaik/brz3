@@ -1,4 +1,4 @@
-<%= form_for([section, row], remote: true) do |f| %>
+<%= form_for([section, row]) do |f| %>
   <% if row.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(row.errors.count, "error") %> prohibited this row from being saved:</h2>
@@ -28,6 +28,6 @@
 
   <br />
   <div class="actions">
-    <%= f.submit button_text, class: "btn btn-primary" %>
+    <%= f.submit button_text, class: "btn btn-primary" %> <%= link_to "Cancel", "#", class: "cancelBtn" %>
   </div>
 <% end %>

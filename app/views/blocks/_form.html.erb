@@ -49,14 +49,16 @@
   </div>
   <br />
   <div class="actions">
-    <%= f.submit button_text, class: "btn btn-primary" %>
+    <%= f.submit button_text, class: "btn btn-primary" %> <%= link_to "Cancel", "#", class: "cancelBtn" %>
   </div>
 <% end %>
 
 <script>
   $(document).ready(function() {
+    $("#image_form_div").hide();
     $("#video_form_div").hide();
-
+    $("#twitterboard_form_div").hide();
+    
     $("#content_name_selector").change(function() {
       $("#form_div > div").slideUp("fast");
       $("[id^='" + $("#content_name_selector").val().toLowerCase() + "']").slideDown("fast");
