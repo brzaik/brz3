@@ -4,4 +4,8 @@ class PortfolioController < ApplicationController
     @other_pages = Page.non_highlighted.limit(4)
     @popular_tags = Tag.all
   end
+
+  def all
+
+  end
 end
