@@ -1,9 +1,4 @@
-Filter by tag:
-<% @tags.each do |tag| %>
-  <%= link_to tag.name, portfolio_show_tag_path(tag) %>&nbsp;&nbsp;&nbsp;
-<% end %>
-
-<% @pages.each do |page| %>
+<% @tag.pages.each do |page| %>
   <div class="panel black" style="border-top: 0px;">
     <%= link_to page do %>
       <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>

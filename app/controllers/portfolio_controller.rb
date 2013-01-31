@@ -6,6 +6,11 @@ class PortfolioController < ApplicationController
   end
 
   def all
+    @pages = Page.all
+    @tags = Tag.all
+  end
 
+  def show_tag
+    @tag = Tag.find(params[:tag_id])
   end
 end
