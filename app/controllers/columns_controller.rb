@@ -18,7 +18,7 @@ class ColumnsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.js
+      format.js {}
       format.json { render :json => @column }
     end
   end

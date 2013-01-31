@@ -1,0 +1,3 @@
+$("#admin-drawer .form-block").html("<%= escape_javascript(render partial: 'blocks/form', locals: { column: @column, block: @block, button_text: 'Create Block' }) %>");
+$("#admin-drawer .form-title").text('Add Block');
+adminPageBuilder.slideInAdminDrawer();

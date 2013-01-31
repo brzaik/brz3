@@ -1,1 +1,3 @@
-$("#page-row-<%= @row.id %>").append("<div class='panel default-padding admin'><%= escape_javascript(render :partial => 'columns/form', :locals => { :button_text => 'Create Column', column: @column, row: @row }) %></div>");
+$("#admin-drawer .form-block").html("<%= escape_javascript(render partial: 'rows/form', locals: { row: @row, column: @column, button_text: 'Create Column' }) %>");
+$("#admin-drawer .form-title").text('Add Column');
+adminPageBuilder.slideInAdminDrawer();
