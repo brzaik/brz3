@@ -1,3 +1,3 @@
 $("#admin-drawer .form-block").html("<%= escape_javascript(render partial: 'rows/form', locals: { row: @row, section: @section, button_text: 'Update Row' }) %>");
 $("#admin-drawer .form-title").text('Edit Row');
-$("#admin-drawer").show();
+adminPageBuilder.slideInAdminDrawer();

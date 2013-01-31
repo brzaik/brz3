@@ -1,3 +1,3 @@
 $("#admin-drawer .form-block").html("<%= escape_javascript(render partial: 'columns/form', locals: { row: @row, column: @column, button_text: 'Update Column' }) %>");
 $("#admin-drawer .form-title").text('Edit Column');
-$("#admin-drawer").show();
+adminPageBuilder.slideInAdminDrawer();
