@@ -13,6 +13,12 @@
   overflow: visible;
   margin-bottom: @baseLineHeight;
 }
+#nav-sectionlist.affix {
+  position: fixed;
+  top: 0px;
+  width: 986px;
+  z-index: @zindexModal;
+}
 
 // Gradient is applied to it's own element because overflow visible is not honored by IE when filter is present
 .navbar-inner {

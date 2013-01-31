@@ -1,6 +1,6 @@
 class BlogPostsController < ApplicationController
   respond_to :html, :xml, :json	
-  before_filter :authenticate_user!, :only => [:new, :edit, :create, :update, :destroy] 
+  before_filter :authenticate_user!  #, :only => [:new, :edit, :create, :update, :destroy] 
     
   # GET /blog_posts
   # GET /blog_posts.xml

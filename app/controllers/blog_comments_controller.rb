@@ -1,6 +1,6 @@
 class BlogCommentsController < ApplicationController
   respond_to :html, :xml, :json	
-  before_filter :authenticate_user!, :only => [:moderate, :edit, :destroy]
+  before_filter :authenticate_user!  #, :only => [:moderate, :edit, :destroy]
   
   def moderate
     @blog_comment = BlogComment.find(params[:id])

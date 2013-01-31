@@ -13,7 +13,17 @@
 //= require jquery_ujs
 //= require application/admin
 //= require application/bootstrap-dropdown
+//= require application/bootstrap-affix
 //= require application/bootstrap-tooltip
-//= require application/bootstrap-popover
-//= require application/bootstrapx-clickover
+//= require application/bootstrap-scrollspy
 //= require application/lightzap
+
+
+$(document).ready(function() {
+  $('#nav-sectionlist').scrollspy();
+
+  $('#nav-affix-wrapper').height($('#nav-sectionlist').height());
+  $('#nav-sectionlist').affix({
+      offset: $('#nav-sectionlist').position()
+  });
+});

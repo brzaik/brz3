@@ -52,13 +52,13 @@ var adminPageBuilder = {
   slideInAdminDrawer: function() {
     $('#admin-drawer').show().animate({
       right: '0px'
-    }, 300, function() {});
+    }, 200, function() {});
   },
 
   slideOutAdminDrawer: function() {
     $('#admin-drawer').animate({
       right: '-402px'
-    }, 200, function() {
+    }, 100, function() {
       $(this).hide();
     });
   }

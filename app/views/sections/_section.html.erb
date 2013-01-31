@@ -1,4 +1,4 @@
-<div id="page-section-<%= section.id %>" class="page-section <%= section.additional_styles %> <% if current_user %>admin-block<% end %>" <%= section.additional_tags %>>
+<div id="section-<%= section.title.downcase %>" class="page-section <%= section.additional_styles %> <% if current_user %>admin-block<% end %>" <%= section.additional_tags %>>
 
   <% if current_user %>
   <div class="admin-controls top">

@@ -3,6 +3,22 @@
     <h1><%= page.title %></h1>
   </div>
 
+  <% if page.sections.count > 0 %>
+  <div id="nav-affix-wrapper">
+    <div id="nav-sectionlist" class="navbar">
+      <div class="navbar-inner">
+        <ul class="nav">
+          <% page.sections.each do |section| %>
+          <li>
+            <%= link_to section.title, "#section-#{ section.title.downcase }" %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
   <%= render page.sections %>
 
   <% if current_user %>
