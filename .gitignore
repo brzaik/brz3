@@ -19,3 +19,4 @@ pickle-email-*.html
 database.yml
 setup_mail.rb
 /public/system/*
+config/initializers/twitter.rb
