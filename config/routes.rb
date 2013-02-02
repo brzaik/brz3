@@ -1,5 +1,8 @@
 Brz3::Application.routes.draw do
 
+  resources :orbits
+
+
   resources :blog_categories
 
   resources :blog_posts do
