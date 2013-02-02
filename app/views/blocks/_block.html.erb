@@ -13,13 +13,13 @@
   <% end %>
 
   <% if block.content_name == "Richtext" %>
-    <%= render :partial => "richtexts/richtext_block", :locals => { :richtext => block.richtext } %>
+    <%= render :partial => "blocks/types/richtext_block", :locals => { :richtext => block.richtext } %>
   <% elsif block.content_name == "Video" %>
-    <%= render :partial => "videos/video_block", :locals => { :video => block.video } %>
+    <%= render :partial => "blocks/types/video_block", :locals => { :video => block.video } %>
   <% elsif block.content_name == "Image" %>
-    <%= render :partial => "images/image_block", :locals => { :image => block.image } %>
+    <%= render :partial => "blocks/types/image_block", :locals => { :image => block.image } %>
   <% elsif block.content_name == "TwitterBoard" %>
-    <%= render :partial => "twitter_boards/twitter_board_block", :locals => { :twitter_board => block.twitter_board } %>
+    <%= render :partial => "blocks/types/twitter_board_block", :locals => { :twitter_board => block.twitter_board } %>
   <% end %>
 
 </div>
