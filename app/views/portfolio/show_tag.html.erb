@@ -1,3 +1,16 @@
+<h1 class="stubby-header default-padding">
+  Filter by Tag:
+  <span style="padding-left: 16px;">
+    <% @tags.each do |tag| %>
+      <% if tag.id.to_s == params[:tag_id] %>
+        <span class="label label-active" style="margin-right: 0px;"><%= tag.name %></span><%= link_to "x", portfolio_all_path, class: "label label-black" %>
+      <% else %>
+        <%= link_to tag.name, portfolio_show_tag_path(tag), class: "label" %>
+      <% end %>
+    <% end %>
+  </span>
+</h1>
+
 <% @tag.pages.each do |page| %>
   <div class="panel black" style="border-top: 0px;">
     <%= link_to page do %>

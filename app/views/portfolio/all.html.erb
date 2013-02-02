@@ -1,7 +1,11 @@
-Filter by tag:
-<% @tags.each do |tag| %>
-  <%= link_to tag.name, portfolio_show_tag_path(tag) %>&nbsp;&nbsp;&nbsp;
-<% end %>
+<h1 class="stubby-header default-padding">
+  Filter by Tag:
+  <span style="padding-left: 16px;">
+    <% @tags.each do |tag| %>
+      <%= link_to tag.name, portfolio_show_tag_path(tag), :class => "label" %>
+    <% end %>
+  </span>
+</h1>
 
 <% @pages.each do |page| %>
   <div class="panel black" style="border-top: 0px;">

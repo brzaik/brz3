@@ -12,5 +12,6 @@ class PortfolioController < ApplicationController
 
   def show_tag
     @tag = Tag.find(params[:tag_id])
+    @tags = Tag.all
   end
 end
