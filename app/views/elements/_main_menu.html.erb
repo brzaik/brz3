@@ -1,5 +1,5 @@
 <ul class="main-menu nav" style="margin-right: 0px;">
-  <li <% if controller.controller_name == 'portfolio' and controller.action_name != 'index' %>class="active"<% end %>><%= link_to "Works", portfolio_all_path %></li>
+  <li <% if (controller.controller_name == 'portfolio' and controller.action_name != 'index') or controller.controller_name == 'pages' %>class="active"<% end %>><%= link_to "Works", portfolio_all_path %></li>
   <li><a href="#">About</a></li>
   <li <% if controller.controller_name == 'contacts' %>class="active"<% end %>><%= link_to "Contact", new_contact_path %></li>
 </ul>
