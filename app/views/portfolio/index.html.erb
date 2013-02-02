@@ -89,7 +89,7 @@
   Common Tags:
   <span style="padding-left: 16px;">
     <% @popular_tags.each do |tag| %>
-      <%= link_to tag.name, tag, :class => "label" %>
+      <%= link_to tag.name, portfolio_show_tag_path(tag), :class => "label" %>
     <% end %>
   </span>
 </h1>
