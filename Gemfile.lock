@@ -60,6 +60,8 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-rails-cdn (0.3.0)
       jquery-rails
+    jquery-turbolinks (0.2.1)
+      rails (>= 3.1.0)
     json (1.7.6)
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
@@ -153,6 +155,7 @@ DEPENDENCIES
   friendly_id
   jquery-rails
   jquery-rails-cdn
+  jquery-turbolinks
   kaminari
   less-rails
   letter_opener

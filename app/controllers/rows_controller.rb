@@ -35,6 +35,7 @@ class RowsController < ApplicationController
   def create
     @row = Row.new(params[:row])
     @row.section = @section
+    @page = @section.page
 
     respond_to do |format|
       if @row.save
@@ -52,6 +53,7 @@ class RowsController < ApplicationController
   def update
     @row = Row.find(params[:id])
     @section = @row.section
+    @page = @section.page
 
     respond_to do |format|
       if @row.update_attributes(params[:row])
@@ -69,6 +71,7 @@ class RowsController < ApplicationController
   def destroy
     @row = Row.find(params[:id])
     @section = @row.section
+    @page = @section.page
     @row.destroy
 
     respond_to do |format|

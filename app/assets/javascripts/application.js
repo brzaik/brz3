@@ -11,6 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require turbolinks
 //= require application/admin
 //= require application/bootstrap-dropdown

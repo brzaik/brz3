@@ -30,20 +30,20 @@
 
   <div class="field">
     <%= f.label :content_name, "Select type of block to add" %>
-    <%= f.select :content_name, { "Rich Text" => "Richtext", "Image" => "Image", "Video" => "Video", "Twitter Board" => "TwitterBoard" }, {}, { :id => "content_name_selector" } %>
+    <%= f.select :content_name, { "Rich Text" => "Richtext", "Image" => "Image", "Video" => "Video", "Twitter Board" => "TwitterBoard" }, { :selected => "", :include_blank => true }, { :id => "content_name_selector" } %>
   </div>
 
   <div id="form_div">
-    <div id="richtext_form_div">
+    <div id="richtext_form_div" style="display: none;">
       <%= render :partial => "blocks/form_for_richtext", :locals => { :f => f } %>
     </div>
-    <div id="image_form_div">
+    <div id="image_form_div" style="display: none;">
       <%= render :partial => "blocks/form_for_image", :locals => { :f => f } %>
     </div>
-    <div id="video_form_div">
+    <div id="video_form_div" style="display: none;">
       <%= render :partial => "blocks/form_for_video", :locals => { :f => f } %>
     </div>
-    <div id="twitterboard_form_div">
+    <div id="twitterboard_form_div" style="display: none;">
       <%= render :partial => "blocks/form_for_twitter_board", :locals => { :f => f } %>
     </div>
   </div>
@@ -52,16 +52,3 @@
     <%= f.submit button_text, class: "btn btn-primary" %> <%= link_to "Cancel", "#", class: "cancelBtn" %>
   </div>
 <% end %>
-
-<script>
-  $(document).ready(function() {
-    $("#image_form_div").hide();
-    $("#video_form_div").hide();
-    $("#twitterboard_form_div").hide();
-    
-    $("#content_name_selector").change(function() {
-      $("#form_div > div").slideUp("fast");
-      $("[id^='" + $("#content_name_selector").val().toLowerCase() + "']").slideDown("fast");
-    });
-  });
-</script>

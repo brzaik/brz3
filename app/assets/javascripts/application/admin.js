@@ -19,6 +19,10 @@ $(document).ready(function() {
     adminPageBuilder.resetPageBuildingUi();
   });
 
+  $('body').on('click', '.editBtn.blockBtn', function(e) {
+    adminPageBuilder.initBlockForm();
+  });
+
 });
 
 $(document).keyup(function(e) {
@@ -60,6 +64,17 @@ var adminPageBuilder = {
       right: '-402px'
     }, 100, function() {
       $(this).hide();
+    });
+  },
+
+  initBlockForm: function() {
+    $("#image_form_div").hide();
+    $("#video_form_div").hide();
+    $("#twitterboard_form_div").hide();
+    
+    $('body').on('change', '#content_name_selector', function() {
+      $("#form_div > div").slideUp("fast");
+      $("[id^='" + $("#content_name_selector").val().toLowerCase() + "']").slideDown("fast");
     });
   }
 };
