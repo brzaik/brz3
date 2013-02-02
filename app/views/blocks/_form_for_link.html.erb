@@ -1,0 +1,14 @@
+<%= f.fields_for :link do |ff| %>
+  <div class="field">
+    <%= ff.label :title %><br />
+    <%= ff.text_field :title %>
+  </div>
+  <div class="field">
+    <%= ff.label :url %><br />
+    <%= ff.text_field :url %>
+  </div>
+  <div class="field">
+    <%= ff.label :caption %><br />
+    <%= ff.text_field :caption %>
+  </div>
+<% end %>

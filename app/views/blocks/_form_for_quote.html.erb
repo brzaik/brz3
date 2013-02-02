@@ -1,0 +1,14 @@
+<%= f.fields_for :quote do |ff| %>
+  <div class="field">
+    <%= ff.label :author %><br />
+    <%= ff.text_field :author %>
+  </div>
+  <div class="field">
+    <%= ff.label :quote %><br />
+    <%= ff.text_area :quote %>
+  </div>
+  <div class="field">
+    <%= ff.label :concatenated_quote %><br />
+    <%= ff.text_field :concatenated_quote %>
+  </div>
+<% end %>

@@ -1,6 +1,8 @@
 class ImagesController < ApplicationController
   before_filter :authenticate_user!
 
+  # we may not need to ever use the controller methods for CRUD, but we leave it here just in case we want to for the imageable relationship
+  
   # GET /images
   # GET /images.json
   def index

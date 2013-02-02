@@ -1,6 +1,8 @@
 class VideosController < ApplicationController
   before_filter :authenticate_user!
 
+  # we may not need to ever use the controller methods for CRUD, but we leave it here just in case we want to for the videoable relationship
+
   # GET /videos
   # GET /videos.json
   def index
