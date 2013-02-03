@@ -1,6 +1,6 @@
-<div id="block_<%= block.id %>" class="block <%= block.additional_styles %> <% if current_user.is_admin? %>admin-block<% end %>" <%= block.additional_tags %>>
+<div id="block_<%= block.id %>" class="block <%= block.additional_styles %> <% if current_user and current_user.is_admin? %>admin-block<% end %>" <%= block.additional_tags %>>
   
-  <% if current_user.is_admin? %>
+  <% if current_user and current_user.is_admin? %>
   <div class="admin-controls top">
     <span class="caption">Block</span>
     <%= link_to edit_column_block_path(block.column, block), class: 'editBtn blockBtn', remote: true do %>

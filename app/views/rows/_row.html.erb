@@ -1,6 +1,6 @@
-<div id="page-row-<%= row.id %>" class="page-row <%= row.additional_styles %> <% if current_user.is_admin? %>admin-block<% end %>" <%= row.additional_tags %>>
+<div id="page-row-<%= row.id %>" class="page-row <%= row.additional_styles %> <% if current_user and current_user.is_admin? %>admin-block<% end %>" <%= row.additional_tags %>>
 
-  <% if current_user.is_admin? %>
+  <% if current_user and current_user.is_admin? %>
   <div class="admin-controls top">
     <span class="caption">Row</span>
     <%= link_to edit_section_row_path(row.section, row), class: 'editBtn', remote: true do %>
@@ -16,7 +16,7 @@
     <%= render row.columns %>
   </div>
 
-  <% if current_user.is_admin? %>
+  <% if current_user and current_user.is_admin? %>
     <div class="admin-controls bottom">
       <%= link_to "Add Column", new_row_column_path(row), class: 'editBtn', remote: true %>
     </div>

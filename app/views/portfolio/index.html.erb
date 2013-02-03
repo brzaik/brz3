@@ -22,7 +22,7 @@
           <div style="padding: 20px 5px 0px 30px;">
             <h2>
               <%= link_to page.title, page %>
-              <% if current_user.is_admin? %>
+              <% if current_user and current_user.is_admin? %>
                 <small class="admin-color">
                   <%= link_to edit_page_path(page) do %>
                     <i class="icon-cog"></i>
@@ -68,7 +68,7 @@
         <h3 class="panel-block-title">
           <%= link_to page do %>
             <%= page.title %>
-            <% if current_user.is_admin? %>
+            <% if current_user and current_user.is_admin? %>
               <small class="admin-color">
                 <%= link_to edit_page_path(page) do %>
                   <i class="icon-cog"></i>

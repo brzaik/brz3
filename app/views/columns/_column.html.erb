@@ -1,6 +1,6 @@
-<div id="column-<%= column.id %>" class="span<%= column.span_width %> <%= column.additional_styles %> <% if current_user.is_admin? %>admin-block<% end %>" <%= column.additional_tags %>>
+<div id="column-<%= column.id %>" class="span<%= column.span_width %> <%= column.additional_styles %> <% if current_user and current_user.is_admin? %>admin-block<% end %>" <%= column.additional_tags %>>
 
-  <% if current_user.is_admin? %>
+  <% if current_user and current_user.is_admin? %>
   <div class="admin-controls top">
     <span class="caption">Column</span>
     <%= link_to edit_row_column_path(column.row, column), class: "editBtn", remote: true do %>
@@ -16,7 +16,7 @@
 
   <%= render column.blocks %>
 
-  <% if current_user.is_admin? %>
+  <% if current_user and current_user.is_admin? %>
   <div class="admin-controls bottom">
     <%= link_to "Add Block", new_column_block_path(column), class: 'editBtn blockBtn', remote: true %>
   </div>

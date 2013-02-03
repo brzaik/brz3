@@ -4,6 +4,7 @@
 <table class="table">
   <tr>
     <th>Email</th>
+    <th>Role</th>
     <th>Approved?</th>
     <th></th>
   </tr>
@@ -11,6 +12,7 @@
   <% @users.each do |user| %>
     <tr>
       <td><%= user.email %></td>
+      <td><%= user.is_admin? ? 'Admin' : 'Basic User' %></td>
       <td><%= user.approved? ? 'Yes' : 'No' %></td>
       <td>&nbsp;</td>
     </tr>

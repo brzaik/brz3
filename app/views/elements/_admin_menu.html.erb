@@ -1,4 +1,4 @@
-<% if current_user.is_admin? %>
+<% if current_user and current_user.is_admin? %>
 
   <div id="admin_bar" class="navbar" style="margin-bottom: 0px;">
     <div class="navbar-inner clearfix">
@@ -93,4 +93,12 @@
     </div>
   </div>
 
+<% elsif user_signed_in? %>
+  <div class="navbar" style="margin-bottom: 0px;">
+    <div class="navbar-inner clearfix">
+      <div class="container-fixed">
+        <p>You are currently signed in. <%= link_to "Sign out", destroy_user_session_path %></p>
+      </div>
+    </div>
+  </div>
 <% end %>
