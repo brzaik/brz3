@@ -3,5 +3,5 @@ class Upload < ActiveRecord::Base
 
   has_many :images
 
-  has_attached_file :myfile, :styles => { :full => "986x500>", :frontpage => "480x260#", :small => "228x150#", :thumb => "80x64#" }
+  has_attached_file :myfile, :styles => { :full => "986x500>", :frontpage => "480x260#", :smproj => "228x150#", :thumb => "80x64#" }
 end
