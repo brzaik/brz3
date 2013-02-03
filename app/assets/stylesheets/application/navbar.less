@@ -14,13 +14,6 @@
   margin-bottom: @baseLineHeight;
 }
 
-#nav-sectionlist.affix {
-  position: fixed;
-  top: 0px;
-  width: 986px;
-  z-index: @zindexModal;
-}
-
 // Gradient is applied to it's own element because overflow visible is not honored by IE when filter is present
 .navbar-inner {
   min-height: @navbarHeight;
@@ -366,6 +359,44 @@ header.main-header .navbar {
       color: @black !important;
     }
   }
+}
+
+#nav-sectionlist {
+  
+  .navbar-inner {
+    background: @grayLighter;
+    height: 44px;
+    padding-left: 0px;
+    padding-right: 30px;
+  }
+  .brand {
+    background: @black;
+    margin-left: 0px;
+    height: 44px;
+    padding: 0px 30px;
+
+    h3 {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      a { 
+        color: @white; 
+      }
+    }
+  }
+  .nav > li > a {
+    color: @grayDark;
+    font-weight: normal;
+  }
+  .nav .active > a {
+    color: @white !important
+  }
+}
+
+#nav-sectionlist.affix {
+  position: fixed;
+  top: 0px;
+  width: 986px;
+  z-index: @zindexModal;
 }
 
 #admin_bar.navbar { 

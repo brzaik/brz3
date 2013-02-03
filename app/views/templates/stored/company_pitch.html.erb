@@ -1,5 +1,11 @@
 <div id="page-panel-<%= page.id %>" class="panel">
  
+ <% if current_user and current_user.is_admin? %>
+   <%= link_to edit_page_path(page) do %>
+     <i class="icon-cog"></i> Edit Page
+   <% end %>
+ <% end %>
+
   <% if page.sections.count > 0 %>
   <div id="nav-affix-wrapper">
     <div id="nav-sectionlist" class="navbar">
