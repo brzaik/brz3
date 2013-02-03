@@ -1,6 +1,7 @@
 class Block < ActiveRecord::Base
   attr_accessible :column_id, :content_name, :position, :additional_styles, :additional_tags
   attr_accessible :richtext_attributes
+  attr_accessible :orbit_attributes
   attr_accessible :video_attributes
   attr_accessible :image_attributes
   attr_accessible :link_attributes
@@ -11,6 +12,7 @@ class Block < ActiveRecord::Base
   belongs_to :column
   
   has_one :richtext, :dependent => :destroy
+  has_one :orbit, :dependent => :destroy
   has_one :twitter_board, :dependent => :destroy
 
   has_one :video, :as => :videoable, :dependent => :destroy
@@ -19,6 +21,7 @@ class Block < ActiveRecord::Base
   has_one :link, :as => :linkable, :dependent => :destroy
   
   accepts_nested_attributes_for :richtext
+  accepts_nested_attributes_for :orbit
   accepts_nested_attributes_for :video
   accepts_nested_attributes_for :image
   accepts_nested_attributes_for :twitter_board

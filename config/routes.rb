@@ -59,8 +59,6 @@ Brz3::Application.routes.draw do
     resources :blocks
   end
 
-  match "made/:id", :to => "pages#show"
-
   match "portfolio" => "portfolio#index"
   match "portfolio/all" => "portfolio#all"
   match "portfolio/tag/:tag_id" => "portfolio#show_tag", :as => :portfolio_show_tag

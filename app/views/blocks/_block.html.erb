@@ -1,6 +1,6 @@
-<div id="block_<%= block.id %>" class="block <%= block.additional_styles %> <% if current_user %>admin-block<% end %>" <%= block.additional_tags %>>
+<div id="block_<%= block.id %>" class="block <%= block.additional_styles %> <% if current_user.is_admin? %>admin-block<% end %>" <%= block.additional_tags %>>
   
-  <% if current_user %>
+  <% if current_user.is_admin? %>
   <div class="admin-controls top">
     <span class="caption">Block</span>
     <%= link_to edit_column_block_path(block.column, block), class: 'editBtn blockBtn', remote: true do %>
@@ -20,6 +20,8 @@
     <%= render :partial => "blocks/types/image_block", :locals => { :image => block.image } %>
   <% elsif block.content_name == "TwitterBoard" %>
     <%= render :partial => "blocks/types/twitter_board_block", :locals => { :twitter_board => block.twitter_board } %>
+  <% elsif block.content_name == "Orbit" %>
+    <%= render :partial => "blocks/types/orbit_block", :locals => { :orbit => block.orbit } %>
   <% end %>
 
 </div>

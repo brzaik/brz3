@@ -1,6 +1,7 @@
 module FormHelper
   def setup_richtext_block(block)
     block.richtext ||= Richtext.new
+    block.orbit ||= Orbit.new
     block.link ||= Link.new
     block.quote ||= Quote.new
     block.video ||= Video.new

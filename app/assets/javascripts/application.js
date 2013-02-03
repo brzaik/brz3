@@ -18,6 +18,7 @@
 //= require application/bootstrap-affix
 //= require application/bootstrap-tooltip
 //= require application/bootstrap-scrollspy
+//= require application/jquery.foundation.orbit
 //= require application/lightzap
 
 
@@ -27,5 +28,12 @@ $(document).ready(function() {
   $('#nav-affix-wrapper').height($('#nav-sectionlist').height());
   $('#nav-sectionlist').affix({
       offset: $('#nav-sectionlist').position()
+  });
+
+  $(".orbit").orbit({
+    timer: false,
+    bullets: true,
+    animation: 'fade',
+    directionalNav: false
   });
 });

@@ -1,0 +1,10 @@
+<div class="orbit" id="orbit-<%= orbit.id %>">
+  <% orbit.images.each do |image| %>
+    <% upload = Upload.find(image.upload_id) %>
+    <% if image.url_link != '' %>
+      <%= link_to image_tag(upload.myfile.url(:full), :alt => image.caption, :title => image.caption), image.url_link %>
+    <% else %>
+      <%= image_tag(upload.myfile.url(:full), :alt => image.caption, :title => image.caption) %>
+    <% end %>
+  <% end %>
+</div>

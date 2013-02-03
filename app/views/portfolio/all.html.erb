@@ -30,7 +30,7 @@
         <h3 class="panel-block-title">
           <%= link_to page do %>
             <%= truncate(page.title, length: 25) %>
-            <% if user_signed_in? %>
+            <% if current_user.is_admin? %>
               <small class="admin-color">
                 <%= link_to edit_page_path(page) do %>
                   <i class="icon-cog"></i>
@@ -51,7 +51,7 @@
         <h3 class="panel-block-title">
           <%= link_to page do %>
             <%= truncate(page.title, length: 25) %>
-            <% if user_signed_in? %>
+            <% if current_user.is_admin? %>
               <small class="admin-color">
                 <%= link_to edit_page_path(page) do %>
                   <i class="icon-cog"></i>
@@ -72,7 +72,7 @@
         <h3 class="panel-block-title">
           <%= link_to page do %>
             <%= truncate(page.title, length: 25) %>
-            <% if user_signed_in? %>
+            <% if current_user.is_admin? %>
               <small class="admin-color">
                 <%= link_to edit_page_path(page) do %>
                   <i class="icon-cog"></i>
@@ -93,7 +93,7 @@
         <h3 class="panel-block-title">
           <%= link_to page do %>
             <%= truncate(page.title, length: 25) %>
-            <% if user_signed_in? %>
+            <% if current_user.is_admin? %>
               <small class="admin-color">
                 <%= link_to edit_page_path(page) do %>
                   <i class="icon-cog"></i>

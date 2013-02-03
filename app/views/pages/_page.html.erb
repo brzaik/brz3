@@ -21,7 +21,7 @@
 
   <%= render page.sections %>
 
-  <% if current_user %>
+  <% if current_user.is_admin? %>
     <br />
     <%= link_to "Add Section", new_page_section_path(page), class: 'editBtn', remote: true %>
   <% end %>
