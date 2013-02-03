@@ -132,7 +132,7 @@ input[type="color"],
     border-color: @linkColor; //rgba(82,168,236,.8);
     outline: 0;
     outline: thin dotted \9; /* IE6-9 */
-    .box-shadow(0 0 8px @linkColor); //~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6)");
+    .box-shadow(0 0 2px @linkColor); //~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6)");
   }
 }
 
@@ -237,6 +237,10 @@ input[type="checkbox"]:focus {
 .input-large      { width: 210px; }
 .input-xlarge     { width: 270px; }
 .input-xxlarge    { width: 530px; }
+.input-pronounced {
+  font-size: 1.2em !important;
+  padding: 8px !important;
+}
 
 // Grid style input sizes
 input[class*="span"],
@@ -561,7 +565,7 @@ legend + .control-group {
   // Float the labels left
   .control-label {
     float: left;
-    width: 140px;
+    width: 120px;
     padding-top: 5px;
     text-align: right;
   }
@@ -571,7 +575,7 @@ legend + .control-group {
     // don't inherit the margin of the parent, in this case .controls
     *display: inline-block;
     *padding-left: 20px;
-    margin-left: 160px;
+    margin-left: 140px;
     *margin-left: 0;
     &:first-child {
       *padding-left: 160px;
@@ -584,6 +588,7 @@ legend + .control-group {
   }
   // Move over buttons in .form-actions to align with .controls
   .form-actions {
-    padding-left: 160px;
+    background: none;
+    padding-left: 140px;
   }
 }
