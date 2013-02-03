@@ -9,6 +9,8 @@ class Page < ActiveRecord::Base
   has_one :upload
   has_and_belongs_to_many :tags
 
+  default_scope order('updated_at DESC')
+
   scope :highlighted, where(:is_highlight => true)
   scope :non_highlighted, where(:is_highlight => false)
   scope :public, where(:is_private => false)

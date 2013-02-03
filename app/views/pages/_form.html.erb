@@ -41,7 +41,11 @@
       <p><b>Public Tag(s):</b></p>
       <ul class="unstyled">
         <% @public_tags.each do |tag| -%>
-          <li><%= check_box_tag "page[tag_ids][]", tag.id, tag_includes_page?(tag) -%> <%= tag.name -%></li>
+          <li>
+            <label class="checkbox">
+              <%= check_box_tag "page[tag_ids][]", tag.id, tag_includes_page?(tag) -%> <%= tag.name -%>
+            </label>
+          </li>
         <% end -%>
       </ul>
 
