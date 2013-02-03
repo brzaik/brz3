@@ -1,8 +1,15 @@
 class PortfolioController < ApplicationController
   def index
-    @highlighted_pages = Page.highlighted
-    @other_pages = Page.non_highlighted.limit(4)
-    @popular_tags = Tag.all
+    if user_signed_in?
+      @special_pages = Page.private.all
+      @highlighted_pages = Page.highlighted
+      @other_pages = Page.non_highlighted.limit(4)
+      @popular_tags = Tag.all
+    else
+      @highlighted_pages = Page.public.highlighted
+      @other_pages = Page.public.non_highlighted.limit(4)
+      @popular_tags = Tag.public.all
+    end
   end
 
   def all

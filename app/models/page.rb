@@ -14,6 +14,7 @@ class Page < ActiveRecord::Base
   scope :highlighted, where(:is_highlight => true)
   scope :non_highlighted, where(:is_highlight => false)
   scope :public, where(:is_private => false)
+  scope :private, where(:is_private => true)
 
   validates_uniqueness_of :title
 

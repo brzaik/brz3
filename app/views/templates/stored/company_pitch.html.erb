@@ -1,0 +1,21 @@
+<div id="page-panel-<%= page.id %>" class="panel">
+ 
+  <% if page.sections.count > 0 %>
+  <div id="nav-affix-wrapper">
+    <div id="nav-sectionlist" class="navbar">
+      <div class="navbar-inner">
+        <ul class="nav">
+          <% page.sections.each do |section| %>
+          <li>
+            <%= link_to section.title, "#section-#{ section.title.downcase }" %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+  <%= render @page %>
+  
+</div>

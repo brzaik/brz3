@@ -1,51 +1,6 @@
-<div id="page-panel-<%= page.id %>" class="panel">
-  <div class="page-details default-padding" style="padding: 12px 30px;">
-    <div class="row-fluid">
-      <div class="span7">
-        <div style="padding: 8px;">
-          <h1><%= page.title %></h1>
-        </div>
-      </div>
-      <div class="span3">
-        <div style="padding: 8px;">
-          <p>Tags:</p>
-          <% page.tags.each do |tag| %>
-            <%= link_to tag.name, portfolio_show_tag_path(tag), class: "label" %>
-          <% end %>
-        </div>
-      </div>
-      <div class="span2">
-        <div style="padding: 8px;">
-          <p>Last Updated on <%= page.updated_at.strftime("%h %d, %Y") %></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <% if page.upload_id %>
-    <% upload = Upload.find(page.upload_id) %>
-    <%= image_tag(upload.myfile.url(:full), :alt => page.title) %>
-  <% end %>
+<%= render page.sections %>
 
-  <% if page.sections.count > 0 %>
-  <div id="nav-affix-wrapper">
-    <div id="nav-sectionlist" class="navbar">
-      <div class="navbar-inner">
-        <ul class="nav">
-          <% page.sections.each do |section| %>
-          <li>
-            <%= link_to section.title, "#section-#{ section.title.downcase }" %>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <% end %>
-
-  <%= render page.sections %>
-
-  <% if current_user and current_user.is_admin? %>
-    <br />
-    <%= link_to "Add Section", new_page_section_path(page), class: 'editBtn', remote: true %>
-  <% end %>
-</div>
+<% if current_user and current_user.is_admin? %>
+  <br />
+  <%= link_to "Add Section", new_page_section_path(page), class: 'editBtn', remote: true %>
+<% end %>

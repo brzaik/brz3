@@ -7,6 +7,59 @@
   </div>
 </div>
 
+<% if user_signed_in? and @special_pages and @special_pages.size > 0 %>
+<br />
+<h1 class="stubby-header default-padding">By Logging In You Can See these Special Pages:</h1>
+
+<div class="panel">
+  <% @special_pages.each do |page| %>
+    
+    <div class="panel-inset-list">
+      
+      <div class="row-fluid">
+        <div class="span6">
+          
+          <div style="padding: 20px 5px 0px 30px;">
+            <h2>
+              <%= link_to page.title, page %>
+              <% if current_user and current_user.is_admin? %>
+                <small class="admin-color">
+                  <%= link_to edit_page_path(page) do %>
+                    <i class="icon-cog"></i>
+                  <% end %>
+                </small>
+              <% end %>
+            </h2>
+            <p><%= page.description %></p>
+            <p>
+              <%= link_to page do %>view project<% end %>
+              
+              <%= link_to "#", :style => "margin-left: 35px;" do %>
+                <%= page.tags.count %> tag<%= page.tags.count == 1 ? '' : 's' %>
+              <% end %>
+            </p>
+          </div>
+
+        </div>
+        <div class="span6">
+          <%= link_to page do %>
+            <% if page.upload_id %>
+              <% upload = Upload.find(page.upload_id) %>
+              <%= image_tag(upload.myfile.url(:frontpage), :alt => page.title) %>
+            <% else %>
+              <%= placeholdit_image_tag "480x260", text: "Project Image", background_color: '#fdba13', text_color: '#000' %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      
+    </div>
+
+  <% end %>
+</div>
+<br />
+<% end %>
+
 <br />
 
 <h1 class="stubby-header default-padding">Selected Works:</h1>
