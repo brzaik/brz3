@@ -13,6 +13,7 @@
   overflow: visible;
   margin-bottom: @baseLineHeight;
 }
+
 #nav-sectionlist.affix {
   position: fixed;
   top: 0px;
@@ -26,6 +27,10 @@
   padding-left:  10px;
   padding-right: 10px;
   background-color: @black;
+
+  a {
+    color: @blackBGLinkColor;
+  }
 }
 
 // Set width to auto for default container
@@ -351,7 +356,7 @@ header.main-header .navbar {
 
       &:hover {
         filter: none;
-        background: lighten(@linkColor, 55%);
+        background: lighten(@linkColor, 50%);
       }
     }
 

@@ -95,9 +95,11 @@
 
 <% elsif user_signed_in? %>
   <div class="navbar" style="margin-bottom: 0px;">
-    <div class="navbar-inner clearfix">
+    <div class="navbar-inner clearfix" style="min-height: 0px;">
       <div class="container-fixed">
-        <p>You are currently signed in. <%= link_to "Sign out", destroy_user_session_path %></p>
+        <span class="pull-right" style="padding: 12px 30px 3px 30px;">
+          <p style="margin-bottom: 0px;">You are currently signed in. <%= link_to "Sign out", destroy_user_session_path %></p>
+        </span>
       </div>
     </div>
   </div>
