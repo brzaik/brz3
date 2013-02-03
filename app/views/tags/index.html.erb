@@ -1,17 +1,24 @@
-<h1>All Tags</h1>
+<div class="panel">
+  <div class="default-padding">
+    <div class="row-fluid">
+      <div class="span8">
+        <h1>All Tags</h1>
+        <br />
+        <ul>
+          <% @tags.each do |tag| %>
+            <li>
+              <h3><%= tag.name %><%= tag.is_private? ? ' (Private)' : '' %></h3>
+              <%= link_to 'Edit', edit_tag_path(tag) %> <%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="span4">
+        <h1>New Tag</h1>
+        <br />
+        <%= render partial: "tags/form", locals: { tag: Tag.new } %>
+      </div>
+    </div>
 
-<ul>
-  <% @tags.each do |tag| %>
-    <li>
-      <h3><%= tag.name %></h3>
-      <%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </li>
-  <% end %>
-</ul>
-
-<br />
-<hr />
-
-<h3>New Tag</h3>
-<br />
-<%= render partial: "tags/form", locals: { tag: Tag.new } %>
+  </div>
+</div>

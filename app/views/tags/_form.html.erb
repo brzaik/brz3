@@ -12,8 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <label class="checkbox">
+      <%= f.check_box :is_private %> Private
+    </label>
   </div>
   <div class="actions">
     <%= f.submit %>

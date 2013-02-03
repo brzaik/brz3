@@ -1,5 +1,5 @@
 class Tag < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :is_private
 
   has_and_belongs_to_many :pages
 
