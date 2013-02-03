@@ -56,7 +56,11 @@
         <p><b>Private Tag(s):</b></p>
         <ul class="unstyled">
           <% @private_tags.each do |tag| -%>
-            <li><%= check_box_tag "page[tag_ids][]", tag.id, tag_includes_page?(tag) -%> <%= tag.name -%></li>
+            <li>
+              <label class="checkbox">
+                <%= check_box_tag "page[tag_ids][]", tag.id, tag_includes_page?(tag) -%> <%= tag.name -%>
+              </label>
+            </li>
           <% end -%>
         </ul>
       <% end %>

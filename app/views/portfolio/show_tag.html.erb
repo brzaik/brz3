@@ -14,7 +14,7 @@
     </h1>
   </div>
   <div class="span3">
-    <p style="text-align: right; padding-right: 30px;"><%= @tag.pages.count %> pages</p>
+    <p style="text-align: right; padding-right: 30px;"><%= @tag.pages.count %> page<%= @tag.pages.count == 1 ? '' : 's' %></p>
   </div>
 </div>
 
@@ -25,94 +25,96 @@
     @pages_cols = @tag.pages.public.in_columns(4)
   end
 %>
-<% @pages_col_1 = @pages_cols[0] %>
-<% @pages_col_2 = @pages_cols[1] %>
-<% @pages_col_3 = @pages_cols[2] %>
-<% @pages_col_4 = @pages_cols[3] %>
+<% if @pages_cols and @pages_cols.size > 0 %>
+  <% @pages_col_1 = @pages_cols[0] %>
+  <% @pages_col_2 = @pages_cols[1] %>
+  <% @pages_col_3 = @pages_cols[2] %>
+  <% @pages_col_4 = @pages_cols[3] %>
 
-<div class="row-fluid">
-  <div class="span3">
-    <% @pages_col_1.each do |page| %>
-      <div class="panel black" style="border-top: 0px; margin-bottom: 24px;">
-        <%= link_to page do %>
-          <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
-        <% end %>
-        <h3 class="panel-block-title">
+  <div class="row-fluid">
+    <div class="span3">
+      <% @pages_col_1.each do |page| %>
+        <div class="panel black" style="border-top: 0px; margin-bottom: 24px;">
           <%= link_to page do %>
-            <%= truncate(page.title, length: 25) %>
-            <% if current_user and current_user.is_admin? %>
-              <small class="admin-color">
-                <%= link_to edit_page_path(page) do %>
-                  <i class="icon-cog"></i>
-                <% end %>
-              </small>
-            <% end %>
+            <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
           <% end %>
-        </h3>
-      </div>
-    <% end %>
-  </div>
-  <div class="span3">
-    <% @pages_col_2.each do |page| %>
-      <div class="panel black" style="border-top: 0px; margin-bottom: 24px;">
-        <%= link_to page do %>
-          <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
-        <% end %>
-        <h3 class="panel-block-title">
+          <h3 class="panel-block-title">
+            <%= link_to page do %>
+              <%= truncate(page.title, length: 25) %>
+              <% if current_user and current_user.is_admin? %>
+                <small class="admin-color">
+                  <%= link_to edit_page_path(page) do %>
+                    <i class="icon-cog"></i>
+                  <% end %>
+                </small>
+              <% end %>
+            <% end %>
+          </h3>
+        </div>
+      <% end %>
+    </div>
+    <div class="span3">
+      <% @pages_col_2.each do |page| %>
+        <div class="panel black" style="border-top: 0px; margin-bottom: 24px;">
           <%= link_to page do %>
-            <%= truncate(page.title, length: 25) %>
-            <% if current_user and current_user.is_admin? %>
-              <small class="admin-color">
-                <%= link_to edit_page_path(page) do %>
-                  <i class="icon-cog"></i>
-                <% end %>
-              </small>
-            <% end %>
+            <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
           <% end %>
-        </h3>
-      </div>
-    <% end %>
-  </div>
-  <div class="span3">
-    <% @pages_col_3.each do |page| %>
-      <div class="panel black" style="border-top: 0px; margin-bottom: 24px;">
-        <%= link_to page do %>
-          <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
-        <% end %>
-        <h3 class="panel-block-title">
+          <h3 class="panel-block-title">
+            <%= link_to page do %>
+              <%= truncate(page.title, length: 25) %>
+              <% if current_user and current_user.is_admin? %>
+                <small class="admin-color">
+                  <%= link_to edit_page_path(page) do %>
+                    <i class="icon-cog"></i>
+                  <% end %>
+                </small>
+              <% end %>
+            <% end %>
+          </h3>
+        </div>
+      <% end %>
+    </div>
+    <div class="span3">
+      <% @pages_col_3.each do |page| %>
+        <div class="panel black" style="border-top: 0px; margin-bottom: 24px;">
           <%= link_to page do %>
-            <%= truncate(page.title, length: 25) %>
-            <% if current_user and current_user.is_admin? %>
-              <small class="admin-color">
-                <%= link_to edit_page_path(page) do %>
-                  <i class="icon-cog"></i>
-                <% end %>
-              </small>
-            <% end %>
+            <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
           <% end %>
-        </h3>
-      </div>
-    <% end %>
-  </div>
-  <div class="span3">
-    <% @pages_col_4.each do |page| %>
-      <div class="panel black" style="border-top: 0px; margin-bottom: 24px;">
-        <%= link_to page do %>
-          <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
-        <% end %>
-        <h3 class="panel-block-title">
+          <h3 class="panel-block-title">
+            <%= link_to page do %>
+              <%= truncate(page.title, length: 25) %>
+              <% if current_user and current_user.is_admin? %>
+                <small class="admin-color">
+                  <%= link_to edit_page_path(page) do %>
+                    <i class="icon-cog"></i>
+                  <% end %>
+                </small>
+              <% end %>
+            <% end %>
+          </h3>
+        </div>
+      <% end %>
+    </div>
+    <div class="span3">
+      <% @pages_col_4.each do |page| %>
+        <div class="panel black" style="border-top: 0px; margin-bottom: 24px;">
           <%= link_to page do %>
-            <%= truncate(page.title, length: 25) %>
-            <% if current_user and current_user.is_admin? %>
-              <small class="admin-color">
-                <%= link_to edit_page_path(page) do %>
-                  <i class="icon-cog"></i>
-                <% end %>
-              </small>
-            <% end %>
+            <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
           <% end %>
-        </h3>
-      </div>
-    <% end %>
+          <h3 class="panel-block-title">
+            <%= link_to page do %>
+              <%= truncate(page.title, length: 25) %>
+              <% if current_user and current_user.is_admin? %>
+                <small class="admin-color">
+                  <%= link_to edit_page_path(page) do %>
+                    <i class="icon-cog"></i>
+                  <% end %>
+                </small>
+              <% end %>
+            <% end %>
+          </h3>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>
