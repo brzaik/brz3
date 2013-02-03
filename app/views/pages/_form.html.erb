@@ -68,6 +68,11 @@
       <br />
 
       <div class="field">
+        <%= f.label :upload_id, "Select Title Image" %>
+        <%= f.collection_select(:upload_id, @uploads, :id, :myfile_file_name, :include_blank => true) %>
+      </div>
+
+      <div class="field">
         <%= f.label :template_id %>
         <%= f.collection_select(:template_id, @templates, :id, :template_name, :include_blank => true) %>
       </div>

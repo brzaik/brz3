@@ -1,7 +1,32 @@
 <div id="page-panel-<%= page.id %>" class="panel">
-  <div class="default-padding">
-    <h1><%= page.title %></h1>
+  <div class="page-details default-padding" style="padding: 12px 30px;">
+    <div class="row-fluid">
+      <div class="span7">
+        <div style="padding: 8px;">
+          <h1><%= page.title %></h1>
+        </div>
+      </div>
+      <div class="span3">
+        <div style="padding: 8px;">
+          <p>Tags:</p>
+          <% page.tags.each do |tag| %>
+            <%= link_to tag.name, portfolio_show_tag_path(tag), class: "label" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="span2">
+        <div style="padding: 8px;">
+          <p>Last Updated on <%= page.updated_at.strftime("%h %d, %Y") %></p>
+        </div>
+      </div>
+    </div>
   </div>
+  <% if page.upload_id %>
+    <% upload = Upload.find(page.upload_id) %>
+
+    <%= image_tag(upload.myfile.url(:full), :alt => page.title) %>
+
+  <% end %>
 
   <% if page.sections.count > 0 %>
   <div id="nav-affix-wrapper">

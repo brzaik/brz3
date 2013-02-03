@@ -25,10 +25,10 @@
 $(document).ready(function() {
   $('#nav-sectionlist').scrollspy();
 
-  $('#nav-affix-wrapper').height($('#nav-sectionlist').height());
-  $('#nav-sectionlist').affix({
-      offset: $('#nav-sectionlist').position()
-  });
+  // $('#nav-affix-wrapper').height($('#nav-sectionlist').height());
+  // $('#nav-sectionlist').affix({
+  //     offset: $('#nav-sectionlist').position()
+  // });
 
   $(".orbit").orbit({
     timer: false,

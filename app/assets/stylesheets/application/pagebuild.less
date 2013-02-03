@@ -1,0 +1,13 @@
+.page-details {
+  .row-fluid { display: table; }
+  [class*="span"] {
+    display: table-cell;
+    vertical-align: middle;
+    border-left: dotted 1px @grayLight;
+  }
+  [class*="span"]:first-child {
+    border-left: none;
+  }
+}
+
+.page-row.default-padding { padding:60px 30px; }

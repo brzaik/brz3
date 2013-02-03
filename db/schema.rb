@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130203001140) do
+ActiveRecord::Schema.define(:version => 20130203034512) do
 
   create_table "blocks", :force => true do |t|
     t.string   "content_name"
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(:version => 20130203001140) do
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
     t.boolean  "is_private",       :default => true, :null => false
+    t.integer  "upload_id"
   end
 
   add_index "pages", ["slug"], :name => "index_pages_on_slug", :unique => true

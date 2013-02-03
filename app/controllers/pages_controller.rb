@@ -22,6 +22,10 @@ class PagesController < ApplicationController
     if @page.is_private?
       :authenticate_user!
     else
+      if @page.upload_id 
+        @upload = Upload.find(@page.upload_id)
+      end
+      
       if @page.template
         begin
           @template = @page.template
@@ -51,6 +55,7 @@ class PagesController < ApplicationController
     @public_tags = Tag.public.all
     @private_tags = Tag.private.all
     @templates = Template.all
+    @uploads = Upload.all
 
     respond_to do |format|
       format.html # new.html.erb
