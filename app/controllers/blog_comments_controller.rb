@@ -1,6 +1,9 @@
 class BlogCommentsController < ApplicationController
   respond_to :html, :xml, :json	
   before_filter :authenticate_user!  #, :only => [:moderate, :edit, :destroy]
+  before_filter do 
+    redirect_to new_user_session_path unless current_user && current_user.is_admin?
+  end
   
   def moderate
     @blog_comment = BlogComment.find(params[:id])

@@ -6,12 +6,23 @@ class PortfolioController < ApplicationController
   end
 
   def all
-    @pages = Page.all
-    @tags = Tag.all
+    if user_signed_in?
+      @pages = Page.all
+      @tags = Tag.all
+    else
+      @pages = Page.public.all
+      @tags = Tag.public.all
+    end
+    
   end
 
   def show_tag
-    @tag = Tag.find(params[:tag_id])
-    @tags = Tag.all
+    if user_signed_in?
+      @tag = Tag.find(params[:tag_id])
+      @tags = Tag.all
+    else
+      @tag = Tag.public.find(params[:tag_id])
+      @tags = Tag.public.all
+    end
   end
 end

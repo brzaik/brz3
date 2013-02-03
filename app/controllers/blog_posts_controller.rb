@@ -1,6 +1,9 @@
 class BlogPostsController < ApplicationController
   respond_to :html, :xml, :json	
   before_filter :authenticate_user!  #, :only => [:new, :edit, :create, :update, :destroy] 
+  before_filter do 
+    redirect_to new_user_session_path unless current_user && current_user.is_admin?
+  end
     
   # GET /blog_posts
   # GET /blog_posts.xml

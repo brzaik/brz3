@@ -1,5 +1,8 @@
 class LinksController < ApplicationController
   before_filter :authenticate_user!
+  before_filter do 
+    redirect_to new_user_session_path unless current_user && current_user.is_admin?
+  end
 
   # we may not need to ever use the controller methods for CRUD, but we leave it here just in case we want to for the linkable relationship
 

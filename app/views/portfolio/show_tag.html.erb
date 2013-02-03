@@ -18,7 +18,13 @@
   </div>
 </div>
 
-<% @pages_cols = @tag.pages.in_columns(4) %>
+<% 
+  if user_signed_in? 
+    @pages_cols = @tag.pages.in_columns(4)
+  else 
+    @pages_cols = @tag.pages.public.in_columns(4)
+  end
+%>
 <% @pages_col_1 = @pages_cols[0] %>
 <% @pages_col_2 = @pages_cols[1] %>
 <% @pages_col_3 = @pages_cols[2] %>

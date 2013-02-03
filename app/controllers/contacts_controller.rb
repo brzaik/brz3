@@ -1,5 +1,8 @@
 class ContactsController < ApplicationController
   before_filter :authenticate_user!, :except => [:new, :create]
+  before_filter :except => [:new, :create] do 
+    redirect_to new_user_session_path unless current_user && current_user.is_admin?
+  end
 
   # GET /contacts
   # GET /contacts.json
@@ -49,10 +52,10 @@ class ContactsController < ApplicationController
         # tell the ContactMailer to send the new contact in email form
         ContactMailer.email_contact(@contact).deliver
 
-        format.html { redirect_to homepage_path, :notice => 'Thanks for your message!' }
+        format.html { redirect_to portfolio_path, :notice => 'Thanks for your message!' }
         format.json { render :json => @contact, :status => :created, :location =>@contact }
       else
-        format.html { redirect_to homepage_path, :notice => "We're sorry - your message was not successfully sent. You can email us at info@twoweeksllc.com." }
+        format.html { redirect_to portfolio_path, :notice => "We're sorry - your message was not successfully sent. You can email us at info@twoweeksllc.com." }
         format.json { render :json => @contact.errors, :status => :unprocessable_entity }
       end
     end
