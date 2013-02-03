@@ -48,7 +48,8 @@ class PagesController < ApplicationController
   # GET /pages/new.json
   def new
     @page = Page.new
-    @tags = Tag.all
+    @public_tags = Tag.public.all
+    @private_tags = Tag.private.all
     @templates = Template.all
 
     respond_to do |format|
@@ -60,7 +61,8 @@ class PagesController < ApplicationController
   # GET /pages/1/edit
   def edit
     @page = Page.find_by_slug(params[:id])
-    @tags = Tag.all
+    @public_tags = Tag.public.all
+    @private_tags = Tag.private.all
     @templates = Template.all
     @uploads = Upload.all
   end

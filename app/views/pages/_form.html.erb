@@ -1,3 +1,4 @@
+<br />
 <%= form_for(@page) do |f| %>
   <% if @page.errors.any? %>
     <div id="error_explanation">
@@ -11,32 +12,56 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title, :class => "fillWidth" %>
-  </div>
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description, :class => 'fillWidth' %>
-  </div>
-  <div class="field">
-    <%= f.check_box :is_highlight %> <%= f.label :is_highlight %>
-  </div>
-  <div class="field">
-    <%= f.label :template_id %>
-    <%= f.collection_select(:template_id, @templates, :id, :template_name, :include_blank => true) %>
-  </div>
-  <div class="field">
-    <%= f.label :meta_description %>
-    <%= f.text_field :meta_description, :class => "fillWidth" %>
-  </div>
+  <div class="row-fluid">
+    <div class="span8">
+      <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title, :class => "fillWidth" %>
+      </div>
+      <div class="field">
+        <%= f.label :description %>
+        <%= f.text_area :description, :class => 'fillWidth' %>
+      </div>
+      <div class="field">
+        <%= f.label :meta_description %>
+        <%= f.text_field :meta_description, :class => "fillWidth" %>
+      </div>
+    </div>
+    <div class="span4">
+      <br />
 
-  <p>Select Tag(s):</p>
-  <ul>
-    <% @tags.each do |tag| -%>
-      <li><%= check_box_tag "page[tag_ids][]", tag.id, tag_includes_page?(tag) -%> <%= tag.name -%></li>
-    <% end -%>
-  </ul>
+      <div class="field">
+        <label class="checkbox">
+          <%= f.check_box :is_highlight %> Highlighted project
+        </label>
+      </div>
+
+      <br />
+
+      <p><b>Public Tag(s):</b></p>
+      <ul class="unstyled">
+        <% @public_tags.each do |tag| -%>
+          <li><%= check_box_tag "page[tag_ids][]", tag.id, tag_includes_page?(tag) -%> <%= tag.name -%></li>
+        <% end -%>
+      </ul>
+
+      <% if @private_tags.size > 0 %>
+        <p><b>Private Tag(s):</b></p>
+        <ul class="unstyled">
+          <% @private_tags.each do |tag| -%>
+            <li><%= check_box_tag "page[tag_ids][]", tag.id, tag_includes_page?(tag) -%> <%= tag.name -%></li>
+          <% end -%>
+        </ul>
+      <% end %>
+
+      <br />
+
+      <div class="field">
+        <%= f.label :template_id %>
+        <%= f.collection_select(:template_id, @templates, :id, :template_name, :include_blank => true) %>
+      </div>
+    </div>
+  </div>
 
   <br />
   <div class="actions">
