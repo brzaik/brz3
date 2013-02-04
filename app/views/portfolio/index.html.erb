@@ -47,7 +47,7 @@
               <% upload = Upload.find(page.upload_id) %>
               <%= image_tag(upload.myfile.url(:frontpage), :alt => page.title) %>
             <% else %>
-              <%= placeholdit_image_tag "480x260", text: "Project Image", background_color: '#fdba13', text_color: '#000' %>
+              &nbsp;<%#= placeholdit_image_tag "480x260", text: "Project Image", background_color: '#fdba13', text_color: '#000' %>
             <% end %>
           <% end %>
         </div>
@@ -100,7 +100,8 @@
               <% upload = Upload.find(page.upload_id) %>
               <%= image_tag(upload.myfile.url(:frontpage), :alt => page.title) %>
             <% else %>
-              <%= placeholdit_image_tag "480x260", text: "Project Image", background_color: '#fdba13', text_color: '#000' %>
+              &nbsp;
+              <%#= placeholdit_image_tag "480x260", text: "Project Image", background_color: '#fdba13', text_color: '#000' %>
             <% end %>
           <% end %>
         </div>
