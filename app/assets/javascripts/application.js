@@ -15,25 +15,25 @@
 //= require turbolinks
 //= require application/admin
 //= require application/bootstrap-dropdown
-//= require application/bootstrap-affix
 //= require application/bootstrap-tooltip
-//= require application/bootstrap-scrollspy
 //= require application/jquery.foundation.orbit
 //= require application/lightzap
 
 
-$(document).ready(function() {
-  $('#nav-sectionlist').scrollspy();
-
-  // $('#nav-affix-wrapper').height($('#nav-sectionlist').height());
-  // $('#nav-sectionlist').affix({
-  //     offset: $('#nav-sectionlist').position()
-  // });
-
+var do_on_load = function() {
   $(".orbit").orbit({
     timer: false,
     bullets: true,
     animation: 'fade',
     directionalNav: false
   });
-});
+
+  // $('#nav-sectionlist').scrollspy();
+
+  // $('#nav-affix-wrapper').height($('#nav-sectionlist').height());
+  // $('#nav-sectionlist').affix({
+  //     offset: 645
+  // });
+};
+$(document).ready(do_on_load);
+$(window).bind('page:change', do_on_load);
