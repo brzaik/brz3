@@ -1,4 +1,4 @@
-<div id="block_<%= block.id %>" class="block <%= block.additional_styles %> <% if current_user and current_user.is_admin? %>admin-block<% end %>" <%= block.additional_tags %>>
+<div id="block_<%= block.id %>" class="block <%= block.additional_styles %> <% if current_user and current_user.is_admin? %>admin-block<% end %>" <%=raw block.additional_tags %>>
   
   <% if current_user and current_user.is_admin? %>
   <div class="admin-controls top">

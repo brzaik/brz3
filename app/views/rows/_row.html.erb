@@ -1,4 +1,4 @@
-<div id="page-row-<%= row.id %>" class="page-row <%= row.additional_styles %> <% if current_user and current_user.is_admin? %>admin-block<% end %>" <%= row.additional_tags %>>
+<div id="page-row-<%= row.id %>" class="page-row <%= row.additional_styles %> <% if current_user and current_user.is_admin? %>admin-block<% end %>" <%=raw row.additional_tags %>>
 
   <% if current_user and current_user.is_admin? %>
   <div class="admin-controls top">

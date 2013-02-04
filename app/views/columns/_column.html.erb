@@ -1,4 +1,4 @@
-<div id="column-<%= column.id %>" class="span<%= column.span_width %> <%= column.additional_styles %> <% if current_user and current_user.is_admin? %>admin-block<% end %>" <%= column.additional_tags %>>
+<div id="column-<%= column.id %>" class="span<%= column.span_width %> <%= column.additional_styles %> <% if current_user and current_user.is_admin? %>admin-block<% end %>" <%=raw column.additional_tags %>>
 
   <% if current_user and current_user.is_admin? %>
   <div class="admin-controls top">
