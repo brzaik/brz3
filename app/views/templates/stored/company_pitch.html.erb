@@ -1,25 +1,29 @@
 <div id="page-panel-<%= page.id %>" class="panel">
  
- <% if current_user and current_user.is_admin? %>
-   <%= link_to edit_page_path(page) do %>
-     <i class="icon-cog"></i> Edit Page
-   <% end %>
- <% end %>
+  <% if current_user and current_user.is_admin? %>
+    <%= link_to edit_page_path(page) do %>
+      <i class="icon-cog"></i> Edit Page
+    <% end %>
+  <% end %>
 
   <% if page.sections.count > 0 %>
-  <div id="nav-affix-wrapper">
-    <div id="nav-sectionlist" class="navbar">
-      <div class="navbar-inner">
-        <ul class="nav">
-          <% page.sections.each do |section| %>
-          <li>
-            <%= link_to section.title, "#section-#{ section.title.downcase }" %>
-          </li>
-          <% end %>
-        </ul>
+    <div id="nav-affix-wrapper">
+      <div id="nav-sectionlist" class="navbar">
+        <div class="navbar-inner">
+          <div class="brand">
+            <h3>Jump to Section:</h3>
+          </div>
+          <ul class="nav" style="margin-left: 12px;">
+            <% page.sections.each do |section| %>
+            <li>
+              <%= link_to section.title, "#section-#{ section.title.downcase }" %>
+            </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
+    <br />
   <% end %>
 
   <%= render @page %>
