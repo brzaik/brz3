@@ -377,9 +377,14 @@ header.main-header .navbar {
     height: 44px;
   }
   .nav > li.brand > a {
-    padding: 11px 30px;
+    padding: 11px 20px;
     background: @black;
     color: @white;
+
+    &:hover {
+      text-decoration: underline;
+      color: @grayLighter !important;
+    }
   }
   .nav > li > a {
     color: @grayDark;
@@ -387,8 +392,8 @@ header.main-header .navbar {
     padding-left: 16px;
     padding-right: 16px;
   }
-  .nav .active > a {
-    color: @white !important
+  .nav > li.active > a {
+    color: @white !important;
   }
 }
 

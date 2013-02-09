@@ -10,5 +10,7 @@ var initPage = function() {
   $('#nav-sectionlist').affix({
     offset: $('#nav-sectionlist').position()
   });
+
+  $('#nav-sectionlist').localScroll();
 };
 $(window).bind('load', initPage);
