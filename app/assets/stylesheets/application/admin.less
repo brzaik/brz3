@@ -82,7 +82,7 @@ a.add-link-block {
     padding: 1px 5px;
     display: none;
     
-    > a { 
+    > a {
       color: @adminOrange;
       margin: 0px 2px;
     }
@@ -113,5 +113,18 @@ a.add-link-block {
 
   a.cancelBtn {
     margin-left: 12px;
+  }
+}
+
+#admin_bar.navbar { 
+  a { color: @black; }
+
+  .dropdown-menu a:hover { color: @white; }
+
+  .navbar-inner {
+    background-color: @adminOrange;
+  }
+  .btn-navbar {
+    background: darken(@adminOrange, 10%);
   }
 }

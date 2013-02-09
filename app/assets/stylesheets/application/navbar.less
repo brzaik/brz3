@@ -305,58 +305,72 @@
 }
 
 // Special variant: topbar within header:
-header.main-header .navbar {
-  .navbar-inner {
-    filter: none;
-    background: none;
-    .box-shadow(0 0 0);
-    min-height: 0px;
-  }
+header.main-header {
 
-  h1.brand {
-    padding: 15px 0px 19px 130px;
+  .main-header-logo {
+    position: relative;
 
-    a {
-      #font > .sans-serif(32px, 700, @baseLineHeight);
-      text-transform: none;
-      color: @black;
-      line-height: normal;
-      text-decoration: none;
-
-      &:hover { 
-        text-decoration: none; 
-        color: @linkColorHover !important;
-
-        small { color: @linkColorHover !important; }
-      }
-
-      small {
-        #font > .sans-serif(24px, 400, @baseLineHeight);
-        color: @grayLight;
-        padding-left: 16px;
-      }
+    img {
+      position: absolute; 
+      top: 0px; 
+      left: 0px;
     }
   }
 
-  .nav {
-    > li > a {
-      color: @black;
-      text-shadow: 0 0 0;
-      text-transform: uppercase;
-      #font > .sans-serif(18px, 700, @baseLineHeight);
-      padding: 32px 20px;
-      .transition(0.1s all linear);
+  .navbar {
 
-      &:hover {
-        filter: none;
-        background: lighten(@linkColor, 50%);
+    .navbar-inner {
+      filter: none;
+      background: none;
+      .box-shadow(0 0 0);
+      min-height: 0px;
+    }
+
+    h1.brand {
+      padding: 15px 0px 19px 130px;
+
+      a {
+        #font > .sans-serif(32px, 700, @baseLineHeight);
+        text-transform: none;
+        color: @black;
+        line-height: normal;
+        text-decoration: none;
+
+        &:hover { 
+          text-decoration: none; 
+          color: @linkColorHover !important;
+
+          small { color: @linkColorHover !important; }
+        }
+
+        small {
+          #font > .sans-serif(24px, 400, @baseLineHeight);
+          color: @grayLight;
+          padding-left: 16px;
+        }
       }
     }
 
-    > li.active > a {
-      background: #f5f5f5 image-url("layout/arrow-blk-down.png") top center no-repeat;
-      text-shadow: 0 1px 0px @white;
-      color: @black !important;
+    .nav {
+      > li > a {
+        color: @black;
+        text-shadow: 0 0 0;
+        text-transform: uppercase;
+        #font > .sans-serif(18px, 700, @baseLineHeight);
+        padding: 32px 20px;
+        .transition(0.1s all linear);
+
+        &:hover {
+          filter: none;
+          background: lighten(@linkColor, 50%);
+        }
+      }
+
+      > li.active > a {
+        background: #f5f5f5 image-url("layout/arrow-blk-down.png") top center no-repeat;
+        text-shadow: 0 1px 0px @white;
+        color: @black !important;
+      }
     }
   }
 }
@@ -404,14 +418,4 @@ header.main-header .navbar {
   width: 986px;
   z-index: @zindexModal;
   .box-shadow(0 3px 6px rgba(0,0,0,.2));
-}
-
-#admin_bar.navbar { 
-  a { color: @black; }
-
-  .dropdown-menu a:hover { color: @white; }
-
-  .navbar-inner {
-    background-color: @adminOrange;
-  }
 }

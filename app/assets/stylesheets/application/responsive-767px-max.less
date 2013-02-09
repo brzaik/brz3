@@ -8,14 +8,55 @@
     -webkit-transform: translate3d(0, 0, 0); // activate the GPU
   }
 
+  header.main-header {
+    .main-header-logo {
+      position: static;
+      width: 100%;
+      text-align: center;
+
+      img {
+        position: static;
+        margin: 0 auto;
+      }
+    }
+    .navbar {
+      h1.brand {
+        padding: 12px;
+        text-align: center;
+        float: none;
+
+        small {
+          display: block;
+          padding-left: 0px;
+        }
+      }
+
+      .nav > li > a {
+        padding: 30px 12px;
+      }
+    }
+    .main-menu {
+      float: none;
+      margin-top: 12px;
+    }
+  }
+
   footer {
     padding: 0px;
 
     [class*="span"] {
       padding: 20px 20px 36px 20px;
-      border-bottom: solid 1px @grayDark;
+      //border-bottom: solid 1px @grayDark;
     }
   }
+
+  .panel-inset-list {
+    border-bottom: solid 6px @black;
+
+    .default-padding { padding: 20px; }
+  }
+
+  //img { width: 100%; }
 
   .login-box { width: 100%; }
   

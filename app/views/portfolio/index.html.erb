@@ -19,7 +19,7 @@
       <div class="row-fluid">
         <div class="span6">
           
-          <div style="padding: 20px 5px 0px 30px;">
+          <div class="default-padding">
             <h2>
               <%= link_to page.title, page %>
               <% if current_user and current_user.is_admin? %>
@@ -72,7 +72,7 @@
       <div class="row-fluid">
         <div class="span6">
           
-          <div style="padding: 20px 5px 0px 30px;">
+          <div class="default-padding">
             <h2>
               <%= link_to page.title, page %>
               <% if current_user and current_user.is_admin? %>
@@ -115,7 +115,7 @@
 <br /><br /><br />
 
 <h1 class="stubby-header default-padding">More from <%= link_to "the Portfolio", portfolio_all_path %>:</h1>
-<div class="row-fluid">
+<div class="panel-set row-fluid">
   
   <% @other_pages.each do |page| %>
     <div class="span3">

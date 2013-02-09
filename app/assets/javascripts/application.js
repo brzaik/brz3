@@ -14,10 +14,10 @@
 //= require application/initPage
 //= require application/admin
 //= require application/bootstrap-dropdown
+//= require application/bootstrap-collapse
 //= require application/bootstrap-tooltip
 //= require application/bootstrap-affix
 //= require application/bootstrap-scrollspy
 //= require application/jquery.foundation.orbit
-//= require application/lightzap
 //= require application/jquery.scrollTo
 //= require application/jquery.localScroll
