@@ -1,10 +1,15 @@
 <%= f.fields_for :orbit do |ff| %>
+  <div class="field">
+    <%= ff.label :title %>
+    <%= ff.text_field :title, :class => 'fillWidth' %>
+  </div>
   <p>
     <b>Orbit ID: <%= orbit.id %></b>
     <br />
     Current images displaying in this orbit carousel:
+    &nbsp;&nbsp;
+    <%= link_to 'Change...', edit_orbit_path(orbit.id), :class => "btn btn-small" unless orbit.id.nil? %>
   </p>
-  <%#= link_to 'Change images...', edit_orbit_path(orbit.id), :class => "btn" %>
   <table class="table">
     <tr>
       <th>Media</th>

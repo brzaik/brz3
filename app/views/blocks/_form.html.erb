@@ -11,18 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :position %>
-    <%= f.number_field :position %>
+  <div class="row-fluid">
+    <div class="span4 field">
+      <%= f.label :position %>
+      <%= f.number_field :position, :class => "input-small" %>
+    </div>
+    <div class="span8 field">
+      <%= f.label :additional_styles, "CSS classes" %>
+      <%= f.text_field :additional_styles, :class => "fillWidth" %>
+    </div>
   </div>
 
   <div class="field">
-    <%= f.label :additional_styles %>
-    <%= f.text_field :additional_styles, :class => "fillWidth" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :additional_tags %>
+    <%= f.label :additional_tags, "Other tags" %>
     <%= f.text_field :additional_tags, :class => "fillWidth" %>
   </div>
 
