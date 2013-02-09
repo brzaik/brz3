@@ -10,19 +10,9 @@
     &nbsp;&nbsp;
     <%= link_to 'Change...', edit_orbit_path(orbit.id), :class => "btn btn-small" unless orbit.id.nil? %>
   </p>
-  <table class="table">
-    <tr>
-      <th>Media</th>
-      <th>Caption</th>
-    </tr>
-
-    <% orbit.images.each do |image| %>
+  <% orbit.images.each do |image| %>
     <% upload = Upload.find(image.upload_id) %>
-    <tr>
-      <td><%= image_tag(upload.myfile.url(:thumb), :alt => image.caption, :title => image.caption) %></td>
-      <td><%= image.caption %></td>
-    </tr>
-    <% end %>
-  </table>
+    <%= image_tag(upload.myfile.url(:thumb), :alt => image.caption, :title => image.caption) %>
+  <% end %>
 
 <% end %>
