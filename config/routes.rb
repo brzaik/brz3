@@ -1,6 +1,10 @@
 Brz3::Application.routes.draw do
 
-  resources :orbits
+  resources :orbits do
+    member do
+      get 'add_row'
+    end
+  end
 
 
   resources :blog_categories

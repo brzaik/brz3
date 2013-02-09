@@ -1,0 +1,7 @@
+<select name="upload_id[<%= index %>]" style="width: 300px;">
+  <% Upload.all.each do |upload| %>
+    <option <% if image.upload_id == upload.id %>selected<% end %> value="<%= upload.id %>">
+      <%= upload.myfile_file_name %>
+    </option>
+  <% end %>
+</select>

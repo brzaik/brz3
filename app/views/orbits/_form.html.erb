@@ -10,11 +10,31 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :block_id %><br />
-    <%= f.number_field :block_id %>
+    <%= f.label :title %>
+    <%= f.text_field :title, :class => "fillWidth" %>
   </div>
+  <br />
+  <h2>Current Images in Orbit Carousel:</h2>
+  <table id="orbit-images-table" class="table">
+    <thead>
+      <tr>
+        <th>Change Media</th>
+        <th>Thumb</th>
+        <th>Position</th>
+        <th>Caption</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @orbit.images.order("position ASC").each_with_index do |image, index| %>
+        <% upload = Upload.find(image.upload_id) %>
+        <%= render partial: "orbits/add_orbit_image_row", locals: { upload: upload, image: image, index: index } %>
+      <% end %>
+    </tbody>
+  </table>
+  <p><%= link_to "Add a new image...", add_row_orbit_path, remote: true %></p>
+  <br /><br />
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,0 +1,1 @@
+$("#orbit-images-table tbody").append("<%= escape_javascript(render partial: 'orbits/add_orbit_image_row', locals: { upload: Upload.new, image: Image.new, index: Time.now.nsec.to_i }) %>");

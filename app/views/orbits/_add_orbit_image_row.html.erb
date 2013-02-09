@@ -1,0 +1,14 @@
+<tr>
+  <td>
+    <%= render partial: "orbits/select_upload", locals: { upload: upload, image: image, index: index } %>
+  </td>
+  <td>
+    <%= render partial: "orbits/show_upload_thumb", locals: { upload: upload, image: image } unless image.id.nil? %>
+  </td>
+  <td>
+    <input class="input-mini" name="positions[<%= index %>]" value="<%= image.position %>" />
+  </td>
+  <td>
+    <input class="fillWidth" name="captions[<%= index %>]" value="<%= image.caption %>" />
+  </td>
+</tr>
