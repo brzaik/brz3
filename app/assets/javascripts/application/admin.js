@@ -1,36 +1,3 @@
-$(document).ready(function() {
-
-  if ( $("#flash-banner").html() !== "" ) {
-    $("#flash-banner").delay(3000).hide("slow");
-  }
-
-  adminPageBuilder.turnOnHoverEvents();
-
-  $('body').on('click', '.editBtn', function(e) {
-    // freeze state in place:
-    adminPageBuilder.turnOffHoverEvents();
-    $(this).closest('.admin-block').addClass('admin-shade');
-    $(this).parents('.admin-block').each(function() {
-      $(this).addClass('solid-shadow');
-    });
-  });
-
-  $('body').on('click', '.cancelBtn', function(e) {
-    adminPageBuilder.resetPageBuildingUi();
-  });
-
-  $('body').on('click', '.editBtn.blockBtn', function(e) {
-    adminPageBuilder.initBlockForm();
-  });
-
-});
-
-$(document).keyup(function(e) {
-  if (e.keyCode == 27 && $('#admin-drawer').css('display') == 'block') {
-    adminPageBuilder.resetPageBuildingUi();
-  }
-});
-
 var adminPageBuilder = {
   turnOnHoverEvents: function() {
     $('body').on('mouseenter', '.admin-block', function() {
@@ -76,5 +43,40 @@ var adminPageBuilder = {
       $("#form_div > div").slideUp("fast");
       $("[id^='" + $("#content_name_selector").val().toLowerCase() + "']").slideDown("fast");
     });
+  },
+
+  initAdminPage: function() {
+
+    if ( $("#flash-banner").html() !== "" ) {
+      $("#flash-banner").delay(3000).hide("slow");
+    }
+
+    adminPageBuilder.turnOnHoverEvents();
+
+    $('body').on('click', '.editBtn', function(e) {
+      // freeze state in place:
+      adminPageBuilder.turnOffHoverEvents();
+      $(this).closest('.admin-block').addClass('admin-shade');
+      $(this).parents('.admin-block').each(function() {
+        $(this).addClass('solid-shadow');
+      });
+    });
+
+    $('body').on('click', '.cancelBtn', function(e) {
+      adminPageBuilder.resetPageBuildingUi();
+    });
+
+    $('body').on('click', '.editBtn.blockBtn', function(e) {
+      adminPageBuilder.initBlockForm();
+    });
+
+    $(document).keyup(function(e) {
+      if (e.keyCode == 27 && $('#admin-drawer').css('display') == 'block') {
+        adminPageBuilder.resetPageBuildingUi();
+      }
+    });
+
   }
 };
+
+$(window).bind('load', adminPageBuilder.initAdminPage);

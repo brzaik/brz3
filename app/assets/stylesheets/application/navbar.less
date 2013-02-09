@@ -369,19 +369,17 @@ header.main-header .navbar {
     padding-left: 0px;
     padding-right: 30px;
   }
-  .brand {
+  .nav > li.brand {
+    padding: 0px;
+    margin: 0px;
+    margin-left: -10px;
     background: @black;
-    margin-left: 0px;
     height: 44px;
-    padding: 0px 30px;
-
-    h3 {
-      padding-top: 8px;
-      padding-bottom: 8px;
-      a { 
-        color: @white; 
-      }
-    }
+  }
+  .nav > li.brand > a {
+    padding: 11px 30px;
+    background: @black;
+    color: @white;
   }
   .nav > li > a {
     color: @grayDark;

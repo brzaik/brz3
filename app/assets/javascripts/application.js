@@ -11,29 +11,12 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery_ujs
-//= require jquery.turbolinks
-//= require turbolinks
+//= require application/initPage
 //= require application/admin
 //= require application/bootstrap-dropdown
 //= require application/bootstrap-tooltip
+//= require application/bootstrap-affix
+//= require application/bootstrap-scrollspy
 //= require application/jquery.foundation.orbit
 //= require application/lightzap
 
-
-var do_on_load = function() {
-  $(".orbit").orbit({
-    timer: false,
-    bullets: true,
-    animation: 'fade',
-    directionalNav: false
-  });
-
-  // $('#nav-sectionlist').scrollspy();
-
-  // $('#nav-affix-wrapper').height($('#nav-sectionlist').height());
-  // $('#nav-sectionlist').affix({
-  //     offset: 645
-  // });
-};
-$(document).ready(do_on_load);
-$(window).bind('page:change', do_on_load);

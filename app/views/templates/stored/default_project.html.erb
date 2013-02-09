@@ -40,13 +40,13 @@
   <div id="nav-affix-wrapper">
     <div id="nav-sectionlist" class="navbar">
       <div class="navbar-inner">
-        <div class="brand">
-          <h3>Jump to Section:</h3>
-        </div>
         <ul class="nav" style="margin-left: 10px;">
+          <li class="brand">
+            <%= link_to page.title, "#page-panel-#{page.id}" %>
+          </li>
           <% page.sections.each do |section| %>
           <li>
-            <%= link_to section.title, "#section-#{ section.title.downcase }" %>
+            <%= link_to section.title, "#section#{ section.id }" %>
           </li>
           <% end %>
         </ul>
@@ -56,6 +56,8 @@
   <br />
   <% end %>
 
+  <div>
   <%= render @page %>
+  </div>
 
 </div>

@@ -19,7 +19,7 @@
 
   <!-- TODO put google analytics here -->
 </head>
-<body class="<%= current_user and current_user.is_admin? and current_user.view_as_admin? ? 'view-admin-true' : 'view-admin-false' %>">
+<body id="top" class="<%= current_user and current_user.is_admin? and current_user.view_as_admin? ? 'view-admin-true' : 'view-admin-false' %>" data-spy="scroll" data-target="#nav-sectionlist" data-offset="0">
 
   <%= render :partial => "elements/admin_menu" %>
 

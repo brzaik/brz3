@@ -36,8 +36,8 @@ gem 'metamagic'
 gem 'page_title_helper'
 gem 'kaminari'
 gem 'placeholdit'
-gem 'turbolinks'
-gem 'jquery-turbolinks'
+#gem 'turbolinks'
+#gem 'jquery-turbolinks'
 
 gem "letter_opener", :group => :development
 
