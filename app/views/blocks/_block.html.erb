@@ -20,6 +20,10 @@
     <%= render :partial => "blocks/types/image_block", :locals => { :image => block.image } %>
   <% elsif block.content_name == "TwitterBoard" %>
     <%= render :partial => "blocks/types/twitter_board_block", :locals => { :twitter_board => block.twitter_board } %>
+  <% elsif block.content_name == "Quote" %>
+    <%= render :partial => "blocks/types/quote_block", :locals => { :quote => block.quote } %>
+  <% elsif block.content_name == "Link" %>
+    <%= render :partial => "blocks/types/link_block", :locals => { :link => block.link } %>
   <% elsif block.content_name == "Orbit" %>
     <%= render :partial => "blocks/types/orbit_block", :locals => { :orbit => block.orbit } %>
   <% end %>

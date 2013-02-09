@@ -1,0 +1,23 @@
+<%= f.fields_for :orbit do |ff| %>
+  <p>
+    <b>Orbit ID: <%= orbit.id %></b>
+    <br />
+    Current images displaying in this orbit carousel:
+  </p>
+  <%#= link_to 'Change images...', edit_orbit_path(orbit.id), :class => "btn" %>
+  <table class="table">
+    <tr>
+      <th>Media</th>
+      <th>Caption</th>
+    </tr>
+
+    <% orbit.images.each do |image| %>
+    <% upload = Upload.find(image.upload_id) %>
+    <tr>
+      <td><%= image_tag(upload.myfile.url(:thumb), :alt => image.caption, :title => image.caption) %></td>
+      <td><%= image.caption %></td>
+    </tr>
+    <% end %>
+  </table>
+
+<% end %>

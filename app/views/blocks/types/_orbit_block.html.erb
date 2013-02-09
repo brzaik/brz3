@@ -1,4 +1,4 @@
-<div class="orbit" id="orbit-<%= orbit.id %>">
+<div class="orbit" id="orbit-<%= orbit.object_id %>">
   <% orbit.images.each do |image| %>
     <% upload = Upload.find(image.upload_id) %>
     <% if image.url_link != '' %>

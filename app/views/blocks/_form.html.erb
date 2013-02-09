@@ -30,21 +30,30 @@
 
   <div class="field">
     <%= f.label :content_name, "Select type of block to add" %>
-    <%= f.select :content_name, { "Rich Text" => "Richtext", "Image" => "Image", "Orbit Carousel" => "Orbit", "Quote" => "Quote", "Link" => "Link", "Video" => "Video", "Twitter Board" => "TwitterBoard" }, { :selected => "", :include_blank => true }, { :id => "content_name_selector" } %>
+    <%= f.select :content_name, { "Rich Text" => "Richtext", "Image" => "Image", "Orbit Carousel" => "Orbit", "Quote" => "Quote", "Link" => "Link", "Video" => "Video", "Twitter Board" => "TwitterBoard" }, { :selected => block.content_name, :include_blank => true }, { :id => "content_name_selector" } %>
   </div>
 
   <div id="form_div">
-    <div id="richtext_form_div" style="display: none;">
+    <div id="richtext_form_div"<% if block.content_name != 'Richtext' %>style="display: none;"<% end %>>
       <%= render :partial => "blocks/form_for_richtext", :locals => { :f => f } %>
     </div>
-    <div id="image_form_div" style="display: none;">
+    <div id="image_form_div"<% if block.content_name != 'Image' %>style="display: none;"<% end %>>
       <%= render :partial => "blocks/form_for_image", :locals => { :f => f } %>
     </div>
-    <div id="video_form_div" style="display: none;">
+    <div id="video_form_div"<% if block.content_name != 'Video' %>style="display: none;"<% end %>>
       <%= render :partial => "blocks/form_for_video", :locals => { :f => f } %>
     </div>
-    <div id="twitterboard_form_div" style="display: none;">
+    <div id="twitterboard_form_div"<% if block.content_name != 'TwitterBoard' %>style="display: none;"<% end %>>
       <%= render :partial => "blocks/form_for_twitter_board", :locals => { :f => f } %>
+    </div>
+    <div id="link_form_div"<% if block.content_name != 'Link' %>style="display: none;"<% end %>>
+      <%= render :partial => "blocks/form_for_link", :locals => { :f => f} %>
+    </div>
+    <div id="quote_form_div"<% if block.content_name != 'Quote' %>style="display: none;"<% end %>>
+      <%= render :partial => "blocks/form_for_quote", :locals => { :f => f} %>
+    </div>
+    <div id="orbit_form_div"<% if block.content_name != 'Orbit' %>style="display: none;"<% end %>>
+      <%= render :partial => "blocks/form_for_orbit", :locals => { :f => f, :orbit => block.orbit } %>
     </div>
   </div>
   <br />
