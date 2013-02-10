@@ -1,7 +1,8 @@
 var initPage = function() {
-  $(".orbit").carousel({
-    interval: false,
-    pause: 'hover'
+  $('.carousel').each(function(){
+    $(this).carousel({
+      interval: false
+    });
   });
 
   $(".default-tooltip").tooltip();
