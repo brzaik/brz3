@@ -16,16 +16,15 @@
     opacity: 0.2;
     border: none;
     .transition(0.1s all linear);
+    display: none;
 
     &.expanded {
       opacity: 1.0;
-
-      .more-text { display: inline; }
+      display: inline;
     }
   }
 
   .more-text {
     padding-right: 8px;
-    display: none;
   }
 }
