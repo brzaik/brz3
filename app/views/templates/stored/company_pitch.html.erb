@@ -12,23 +12,23 @@
   <% end %>
 
   <% if page.sections.count > 0 %>
-    <div id="nav-affix-wrapper">
-      <div id="nav-sectionlist" class="navbar">
-        <div class="navbar-inner">
-          <div class="brand">
-            <h3>Jump to Section:</h3>
-          </div>
-          <ul class="nav" style="margin-left: 12px;">
-            <% page.sections.each do |section| %>
-            <li>
-              <%= link_to section.title, "#section-#{ section.title.downcase }" %>
-            </li>
-            <% end %>
-          </ul>
-        </div>
+  <div id="nav-affix-wrapper">
+    <div id="nav-sectionlist" class="navbar">
+      <div class="navbar-inner">
+        <ul class="nav" style="margin-left: 10px;">
+          <li class="brand">
+            <%= link_to page.title, "#page-panel-#{page.id}" %>
+          </li>
+          <% page.sections.each do |section| %>
+          <li>
+            <%= link_to section.title, "#section#{ section.id }" %>
+          </li>
+          <% end %>
+        </ul>
       </div>
     </div>
-    <br />
+  </div>
+  <br />
   <% end %>
 
   <%= render @page %>

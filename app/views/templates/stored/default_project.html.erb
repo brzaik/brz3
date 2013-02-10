@@ -15,14 +15,18 @@
           </h1>
         </div>
       </div>
+      <% if page.tags.size > 0 %>
       <div class="span3">
         <div style="padding: 8px;">
-          <p>Tags:</p>
-          <% page.tags.each do |tag| %>
-            <%= link_to tag.name, portfolio_show_tag_path(tag), class: "label" %>
-          <% end %>
+          <p>
+            <i class="icon-tags"></i>&nbsp;&nbsp;
+            <% page.tags.each do |tag| %>
+              <%= link_to tag.name, portfolio_show_tag_path(tag), class: "label" %>
+            <% end %>
+          </p>
         </div>
       </div>
+      <% end %>
       <div class="span2">
         <div style="padding: 8px;">
           <p>Last Updated on <%= page.updated_at.strftime("%h %d, %Y") %></p>
