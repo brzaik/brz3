@@ -10,7 +10,7 @@
       <div class="item<% if i == 0 %> active<% end %>">
         <% upload = Upload.find(image.upload_id) %>
         <% if image.url_link != '' %>
-          <%= link_to image_tag(upload.myfile.url(:orbit), :alt => image.caption), image.url_link %>
+          <%= link_to image_tag(upload.myfile.url(:orbit), :alt => image.caption), upload.myfile.url(:original) %>
         <% else %>
           <%= image_tag(upload.myfile.url(:orbit), :alt => image.caption) %>
         <% end %>

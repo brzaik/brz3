@@ -13,7 +13,6 @@
 //= require jquery_ujs
 //= require application/initPage
 //= require application/admin
-//= require application/bootstrap-transition
 //= require application/bootstrap-dropdown
 //= require application/bootstrap-collapse
 //= require application/bootstrap-tooltip

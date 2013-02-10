@@ -7,7 +7,7 @@
   position: relative;
   margin-bottom: @baseLineHeight;
   line-height: 1;
-  background: @grayDark;
+  background: @grayLighter;
 }
 
 .carousel-inner {
@@ -17,6 +17,7 @@
 }
 
 .carousel-inner {
+  border: solid 3px @grayLighter;
 
   > .item {
     display: none;
@@ -73,7 +74,7 @@
 .carousel-control {
   position: absolute;
   top: 40%;
-  left: 15px;
+  left: 5px;
   width: 40px;
   height: 40px;
   margin-top: -20px;
@@ -97,7 +98,7 @@
   // Reposition the right one
   &.right {
     left: auto;
-    right: 15px;
+    right: 5px;
   }
 
   // Hover/focus state
@@ -127,12 +128,12 @@
     height: 10px;
     margin-left: 5px;
     text-indent: -999px;
-    background-color: #ccc;
-    background-color: rgba(255,255,255,.25);
+    background-color: @grayDark;
+    background-color: rgba(0,0,0,.5);
     border-radius: 5px;
   }
   .active {
-    background-color: #fff;
+    background-color: @black;
   }
 }
 
@@ -147,6 +148,7 @@
   padding: 15px;
   background: @grayDark;
   background: rgba(0,0,0,.75);
+  .transition(0.2s all linear);
 }
 .carousel-caption h4,
 .carousel-caption p {
@@ -159,3 +161,4 @@
 .carousel-caption p {
   margin-bottom: 0;
 }
+//.carousel:hover .carousel-caption { display: none; }
