@@ -67,6 +67,9 @@ Brz3::Application.routes.draw do
   match "portfolio/all" => "portfolio#all"
   match "portfolio/tag/:tag_id" => "portfolio#show_tag", :as => :portfolio_show_tag
 
+  match "about" => "pages#about"
+  match "contact" => "contacts#new"
+
   resources :contacts
 
   root :to => 'portfolio#index'

@@ -116,4 +116,13 @@ class PagesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def about
+    @about_page = Page.about.first
+
+    respond_to do |format|
+      format.html { redirect_to @about_page }
+      format.json { }
+    end
+  end
 end
