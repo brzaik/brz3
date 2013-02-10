@@ -13,13 +13,13 @@
   }
 
   .more {
-    opacity: 0.2;
+    .opacity(20);
     border: none;
-    .transition(0.1s all linear);
+    .transition(0.1s display linear);
     display: none;
 
     &.expanded {
-      opacity: 1.0;
+      .opacity(100);
       display: inline;
     }
   }

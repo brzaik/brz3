@@ -15,3 +15,25 @@
 .page-row {
   h1, h2, h3, h4, h5 { line-height: normal; }
 }
+
+.skills-matrix {
+  p {
+    line-height: 3em;
+    margin: 0px;
+  }
+
+}
+.circle-progress {
+  border: solid 2px @black;
+  .border-radius(500px);
+  background: lighten(@grayLighter, 5%);
+  padding: 2px 8px;
+  font-size: 1.4em;
+  color: @black;
+  line-height: 2em;
+
+  &:hover { 
+    background: lighten(@linkColor, 50%);
+    text-decoration: none !important; 
+  }
+}

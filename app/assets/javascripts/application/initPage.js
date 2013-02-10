@@ -4,6 +4,8 @@ var initPage = function() {
     pause: 'hover'
   });
 
+  $(".default-tooltip").tooltip();
+  
   $('#nav-affix-wrapper').height($('#nav-sectionlist').height());
   $('#nav-sectionlist').affix({
     offset: $('#nav-sectionlist').position()
