@@ -15,8 +15,10 @@
   <% end %>
 
   <div class="default-padding" style="padding-top: 0px;">
-    <h1 class="section-title"><%= section.title %></h1>
-    <br />
+    <% if section.show_title_as_header? %>
+      <h1 class="section-title"><%= section.title %></h1>
+      <br />
+    <% end %>
 
     <%= render section.rows %>
   </div>

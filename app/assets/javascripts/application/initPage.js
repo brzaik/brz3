@@ -5,7 +5,10 @@ var initPage = function() {
   });
 
   $(".default-tooltip").tooltip();
-  
+  $("a.default-tooltip").click(function(e) {
+    e.preventDefault();
+  });
+
   $('#nav-affix-wrapper').height($('#nav-sectionlist').height());
   $('#nav-sectionlist').affix({
     offset: $('#nav-sectionlist').position()

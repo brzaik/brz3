@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130210045921) do
+ActiveRecord::Schema.define(:version => 20130210211527) do
 
   create_table "blocks", :force => true do |t|
     t.string   "content_name"
@@ -149,9 +149,10 @@ ActiveRecord::Schema.define(:version => 20130210045921) do
     t.integer  "position"
     t.string   "additional_styles"
     t.string   "additional_tags"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
     t.string   "title"
+    t.boolean  "show_title_as_header", :default => false, :null => false
   end
 
   create_table "tags", :force => true do |t|
