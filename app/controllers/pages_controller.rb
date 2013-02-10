@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show]
-  before_filter :except => [:show] do 
+  before_filter :authenticate_user!, :except => [:show, :about]
+  before_filter :except => [:show, :about] do 
     redirect_to new_user_session_path unless current_user && current_user.is_admin?
   end
 
