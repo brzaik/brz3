@@ -9,11 +9,7 @@
     <% orbit.images.each_with_index do |image, i| %>
       <div class="item<% if i == 0 %> active<% end %>">
         <% upload = Upload.find(image.upload_id) %>
-        <% if image.url_link != '' %>
-          <%= link_to image_tag(upload.myfile.url(:orbit), :alt => image.caption), upload.myfile.url(:original) %>
-        <% else %>
-          <%= image_tag(upload.myfile.url(:orbit), :alt => image.caption) %>
-        <% end %>
+        <%= link_to image_tag(upload.myfile.url(:orbit), :alt => image.caption), upload.myfile.url(:original) %>
         <% if !image.caption.empty? %>
           <div class="carousel-caption">
             <p><%= image.caption %></p>
