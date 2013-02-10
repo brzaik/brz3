@@ -11,9 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :position %>
-    <%= f.number_field :position %>
+  <div class="row-fluid">
+    <div class="span4 field">
+      <%= f.label :position %>
+      <%= f.number_field :position, :class => "input-small" %>
+    </div>
+    <div class="span4 field">
+      <%= f.label :section_id, "Move to Section" %>
+      <%= f.number_field :section_id, :class => "input-small" %>
+    </div>
   </div>
 
   <div class="field">
