@@ -3,6 +3,7 @@
 <table class="table">
   <tr>
     <th>Title</th>
+    <th>Attributes</th>
     <th>Description</th>
     <th>Tags</th>
     <th></th>
@@ -10,14 +11,23 @@
 
 <% @pages.each do |page| %>
   <tr>
-    <td><%= page.title %> <%= page.is_highlight? ? '(Highlight)' : '' %></td>
-    <td><%= page.description %></td>
+    <td><%= link_to page.title, page %></td>
+    <td>
+      <%=raw page.is_private? ? "<p>Private</p>" : '' %>
+      <%=raw page.is_highlight? ? "<p>Highlight</p>" : '' %>
+      <%=raw page.is_about_page? ? "<p>About Page</p>" : '' %>
+    </td>
+    <td><%= truncate(page.description, length: 100) %></td>
     <td>
       <% page.tags.each do |tag| %>
         <%= tag.name %>&nbsp;&nbsp;
       <% end %>
     </td>
-    <td><%= link_to 'Show', page %> <%= link_to 'Edit', edit_page_path(page) %> <%= link_to 'Destroy', page, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+    <td>
+      <%= link_to 'Edit', edit_page_path(page), class: "btn btn-mini" %> 
+      <%= link_to 'Destroy', page, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-mini" %> 
+      <%= link_to 'Make About Page', make_about_page_page_path(page), class: "btn btn-mini" unless page.is_about_page? %>
+    </td>
   </tr>
 <% end %>
 </table>

@@ -125,4 +125,21 @@ class PagesController < ApplicationController
       format.json { }
     end
   end
+
+  def make_about_page
+    @page = Page.find(params[:id])
+
+    # first change all pages to not be the about page:
+    Page.all.each do |page|
+      page.update_attributes(:is_about_page => false)
+    end
+
+    respond_to do |format|
+      if @page.update_attributes(:is_about_page => true)
+        format.html { redirect_to pages_path, notice: 'About page changed.' }
+      end
+    end
+
+
+  end
 end

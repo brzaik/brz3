@@ -48,6 +48,9 @@ Brz3::Application.routes.draw do
   resources :templates
 
   resources :pages do
+    member do 
+      get 'make_about_page'
+    end
     resources :sections
   end
 
