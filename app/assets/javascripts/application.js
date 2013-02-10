@@ -13,11 +13,12 @@
 //= require jquery_ujs
 //= require application/initPage
 //= require application/admin
+//= require application/bootstrap-transition
 //= require application/bootstrap-dropdown
 //= require application/bootstrap-collapse
 //= require application/bootstrap-tooltip
 //= require application/bootstrap-affix
 //= require application/bootstrap-scrollspy
-//= require application/jquery.foundation.orbit
+//= require application/bootstrap-carousel
 //= require application/jquery.scrollTo
 //= require application/jquery.localScroll

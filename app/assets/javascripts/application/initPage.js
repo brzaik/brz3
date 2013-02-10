@@ -1,9 +1,7 @@
 var initPage = function() {
-  $(".orbit").orbit({
-    timer: false,
-    bullets: true,
-    animation: 'fade',
-    directionalNav: false
+  $(".orbit").carousel({
+    interval: false,
+    pause: 'hover'
   });
 
   $('#nav-affix-wrapper').height($('#nav-sectionlist').height());

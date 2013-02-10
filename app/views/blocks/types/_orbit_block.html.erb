@@ -1,10 +1,28 @@
-<div class="orbit" id="orbit-<%= orbit.object_id %>">
-  <% orbit.images.each do |image| %>
-    <% upload = Upload.find(image.upload_id) %>
-    <% if image.url_link != '' %>
-      <%= link_to image_tag(upload.myfile.url(:full), :alt => image.caption, :title => image.caption), image.url_link %>
-    <% else %>
-      <%= image_tag(upload.myfile.url(:full), :alt => image.caption, :title => image.caption) %>
+<div id="orbit-<%= orbit.id %>" class="carousel slide">
+  <ol class="carousel-indicators">
+    <% orbit.images.each_with_index do |image, i| %>
+      <li data-target="#orbit-<%= orbit.id %>" data-slide-to="<%= i %>" <% if i == 0 %>class="active"<% end %>></li>
     <% end %>
-  <% end %>
+  </ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <% orbit.images.each_with_index do |image, i| %>
+      <div class="item<% if i == 0 %> active<% end %>">
+        <% upload = Upload.find(image.upload_id) %>
+        <% if image.url_link != '' %>
+          <%= link_to image_tag(upload.myfile.url(:full), :alt => image.caption), image.url_link %>
+        <% else %>
+          <%= image_tag(upload.myfile.url(:full), :alt => image.caption) %>
+        <% end %>
+        <% if !image.caption.empty? %>
+          <div class="carousel-caption">
+            <p><%= image.caption %></p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#orbit-<%= orbit.id %>" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#orbit-<%= orbit.id %>" data-slide="next">&rsaquo;</a>
 </div>
