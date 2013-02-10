@@ -10,5 +10,12 @@ var initPage = function() {
   });
 
   $('#nav-sectionlist').localScroll();
+
+  $("#frontpage-header a").mouseenter(function() {
+    $(this).find(".more").addClass("expanded");
+  });
+  $("#frontpage-header a").mouseleave(function() {
+    $(this).find(".more").removeClass("expanded");
+  });
 };
 $(window).bind('load', initPage);

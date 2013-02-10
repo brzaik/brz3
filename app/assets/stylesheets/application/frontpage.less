@@ -1,0 +1,31 @@
+#frontpage-header {
+  margin: 20px 0px 40px 30px; 
+  font-size: 46px; 
+  line-height: 52px;
+
+  a { 
+    color: @black;
+    text-decoration: none;
+
+    &:hover {
+      color: @linkColorHover;
+    }
+  }
+
+  .more {
+    opacity: 0.2;
+    border: none;
+    .transition(0.1s all linear);
+
+    &.expanded {
+      opacity: 1.0;
+
+      .more-text { display: inline; }
+    }
+  }
+
+  .more-text {
+    padding-right: 8px;
+    display: none;
+  }
+}

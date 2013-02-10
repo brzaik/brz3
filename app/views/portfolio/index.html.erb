@@ -1,6 +1,10 @@
 <div class="row-fluid">
   <div class="span8">
-    <h1 style="margin: 20px 0px 40px 30px; font-size: 46px; line-height: 52px;">Hi there, I'm Brian. I design and build products aimed at making life more enjoyable.</h1>
+    <h1 id="frontpage-header">
+      <%= link_to about_path do %>
+        Hi there, I'm Brian. I design and build products aimed at making life more enjoyable. <span class="more label label-black label-big-rounded"><span class="more-text">More</span> <i class="icon-caret-right"></i></span>
+      <% end %>
+    </h1>
   </div>
   <div class="span4">
     <%= image_tag("fp-pic.png", :alt => "Brian Zaik") %>
