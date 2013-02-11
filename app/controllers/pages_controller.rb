@@ -1,8 +1,8 @@
 class PagesController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :about]
-  before_filter :except => [:show, :about] do 
-    redirect_to new_user_session_path unless current_user && current_user.is_admin?
-  end
+  # before_filter :except => [:show, :about] do 
+  #   redirect_to new_user_session_path unless current_user && current_user.is_admin?
+  # end
 
   # GET /pages
   # GET /pages.json
@@ -19,30 +19,31 @@ class PagesController < ApplicationController
   # GET /pages/1.json
   def show
     @page = Page.find_by_slug(params[:id])
-    if @page.is_private?
-      :authenticate_user!
-    end
-    
-    if @page.upload_id 
-      @upload = Upload.find(@page.upload_id)
-    end
 
-    if @page.template
-      begin
-        @template = @page.template
-        
+    if @page.nil? or (@page.is_private? and current_user.nil?)
+      redirect_to '/404.html'
+    else 
+      if @page.upload_id 
+        @upload = Upload.find(@page.upload_id)
+      end
+
+      if @page.template
+        begin
+          @template = @page.template
+          
+          respond_to do |format|
+            format.html {render "templates/stored/#{@template.template_name}", :layout => true, :locals => { :page => @page }}
+            format.json { render :json => @page }
+          end
+        #redirect non-existent page requests to the 404 page
+        rescue ActiveRecord::RecordNotFound
+          redirect_to '/404.html'
+        end
+      else
         respond_to do |format|
-          format.html {render "templates/stored/#{@template.template_name}", :layout => true, :locals => { :page => @page }}
+          format.html # show.html.erb
           format.json { render :json => @page }
         end
-      #redirect non-existent page requests to the 404 page
-      rescue ActiveRecord::RecordNotFound
-        redirect_to '/404.html'
-      end
-    else
-      respond_to do |format|
-        format.html # show.html.erb
-        format.json { render :json => @page }
       end
     end
 
