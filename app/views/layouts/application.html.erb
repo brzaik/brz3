@@ -9,7 +9,7 @@
   <%= javascript_include_tag "application" %>
 
   <!--[if lt IE 9]>
-  <script src="/assets/html5shiv.js"></script>
+  <%= javascript_include_tag 'html5shiv' %>
   <![endif]-->
 
   <%= yield :head %>

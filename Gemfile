@@ -34,4 +34,5 @@ gem 'friendly_id'
 gem 'metamagic'
 gem 'kaminari'
 gem 'placeholdit'
+gem 'html5shiv-rails'
 gem "letter_opener", :group => :development
