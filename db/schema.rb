@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130211035838) do
+ActiveRecord::Schema.define(:version => 20130211044702) do
 
   create_table "blocks", :force => true do |t|
     t.string   "content_name"
@@ -73,10 +73,11 @@ ActiveRecord::Schema.define(:version => 20130211035838) do
     t.string   "imageable_type"
     t.integer  "position"
     t.string   "url_link"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.integer  "upload_id"
     t.string   "caption"
+    t.boolean  "include_border", :default => true, :null => false
   end
 
   create_table "links", :force => true do |t|
