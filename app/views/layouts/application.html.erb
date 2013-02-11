@@ -15,6 +15,10 @@
   <script type="text/javascript" src="//use.typekit.net/fon6qml.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
+  <!--[if lt IE 9]>
+  <%= javascript_include_tag 'html5shiv' %>
+  <![endif]-->
+
   <!-- TODO put google analytics here -->
 </head>
 <body id="top" class="<%= current_user and current_user.is_admin? and current_user.view_as_admin? ? 'view-admin-true' : 'view-admin-false' %>" data-spy="scroll" data-target="#nav-sectionlist" data-offset="0">
@@ -37,9 +41,5 @@
   </div>
 
   <%= render :partial => "elements/footer" %>
-
-  <!--[if lt IE 9]>
-  <%= javascript_include_tag 'html5shiv' %>
-  <![endif]-->
 </body>
 </html>
