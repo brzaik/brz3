@@ -50,7 +50,7 @@ class ContactsController < ApplicationController
     respond_to do |format|
       if @contact.save
         # tell the ContactMailer to send the new contact in email form
-        ContactMailer.email_contact(@contact).deliver
+        #ContactMailer.email_contact(@contact).deliver
 
         format.html { redirect_to portfolio_path, :notice => 'Thanks for your message!' }
         format.json { render :json => @contact, :status => :created, :location =>@contact }
