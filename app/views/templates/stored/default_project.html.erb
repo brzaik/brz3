@@ -54,7 +54,7 @@
           </li>
           <% end %>
         </ul>
-        <% if !page.url_link.empty? %>
+        <% if page.url_link and !page.url_link.empty? %>
         <ul class="nav pull-right">
           <li>
             <%= link_to page.url_link do %>
