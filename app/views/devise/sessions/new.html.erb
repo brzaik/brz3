@@ -13,9 +13,9 @@
         <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
           
           <div class="control-group">
-            <%= f.label :email, class: "control-label" %>
+            <%= f.label :login, class: "control-label" %>
             <div class="controls">
-              <%= f.email_field :email, class: "input-pronounced" %>
+              <%= f.text_field :login, class: "input-pronounced" %>
             </div>
           </div>
 
