@@ -1,6 +1,6 @@
 <% upload = Upload.find(image.upload_id) %>
 <% if image.url_link != '' %>
-  <%= link_to image_tag(upload.myfile.url, :alt => image.caption, :title => image.caption), image.url_link %>
+  <%= link_to image_tag(upload.myfile.url, :alt => image.caption, :title => image.caption), image.url_link, :class => 'block-image' %>
 <% else %>
-  <%= link_to image_tag(upload.myfile.url, :alt => image.caption, :title => image.caption), upload.myfile.url %>
+  <%= link_to image_tag(upload.myfile.url, :alt => image.caption, :title => image.caption), upload.myfile.url, :class => 'block-image' %>
 <% end %>
