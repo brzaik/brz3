@@ -2,5 +2,5 @@
 <% if image.url_link != '' %>
   <%= link_to image_tag(upload.myfile.url, :alt => image.caption, :title => image.caption), image.url_link %>
 <% else %>
-  <%= image_tag(upload.myfile.url, :alt => image.caption, :title => image.caption) %>
+  <%= link_to image_tag(upload.myfile.url, :alt => image.caption, :title => image.caption), upload.myfile.url %>
 <% end %>
