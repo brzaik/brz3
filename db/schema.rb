@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130211014922) do
+ActiveRecord::Schema.define(:version => 20130211035838) do
 
   create_table "blocks", :force => true do |t|
     t.string   "content_name"
@@ -102,12 +102,11 @@ ActiveRecord::Schema.define(:version => 20130211014922) do
     t.boolean  "is_highlight"
     t.integer  "template_id"
     t.string   "slug"
-    t.string   "meta_description"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
-    t.boolean  "is_private",       :default => true,  :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.boolean  "is_private",    :default => true,  :null => false
     t.integer  "upload_id"
-    t.boolean  "is_about_page",    :default => false, :null => false
+    t.boolean  "is_about_page", :default => false, :null => false
     t.string   "url_link"
   end
 
