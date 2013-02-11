@@ -1,12 +1,12 @@
 <% upload = Upload.find(image.upload_id) %>
+
 <% if image.include_border? %>
-<span class="bordered-image">
-<% end %>
-  <% if image.url_link != '' %>
-    <%= link_to image_tag(upload.myfile.url, :alt => image.caption, :title => image.caption), image.url_link, :class => 'block-image' %>
-  <% else %>
-    <%= link_to image_tag(upload.myfile.url, :alt => image.caption, :title => image.caption), upload.myfile.url, :class => 'block-image' %>
-  <% end %>
-<% if image.include_border? %>
-</span>
+  <% image_url_to_click = '' %>
+  <% image.url_link != '' ? image_url_to_click = image.url_link : image_url_to_click = upload.myfile.url %>
+
+  <span class="bordered-image">
+    <%= link_to image_tag(upload.myfile.url, :alt => image.caption, :title => image.caption), image_url_to_click %>
+  </span>
+<% else %>
+  <%= image_tag(upload.myfile.url, :alt => image.caption, :title => image.caption) %>
 <% end %>
