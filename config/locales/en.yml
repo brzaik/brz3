@@ -20,9 +20,7 @@ en:
     title: "Main Menu Items"
 
   pages:
-    title: "Pages"
-    logovid:
-      title: "Welcome Intro"
+    title: "{{page_title}} - Pages"
 
   richtexts:
     title: "Rich Texts"

@@ -1,3 +1,8 @@
+<%
+  meta :title => @page.title + " - Brian R Zaik, UX Designer + Developer",
+       :description => @page.meta_description
+%>
+
 <%= render page.sections %>
 
 <% if current_user and current_user.is_admin? %>

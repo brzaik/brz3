@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
-  <%= metamagic :description => "Brian R Zaik, User Experience Designer and Developer", :keywords => %w(brian zaik brian-zaik brian-r-zaik designer user experience user-experience hci software computer) %>
-  <title><%= page_title %></title>
+  <%= metamagic :title => "#{ controller.controller_name.titleize } - Brian R Zaik, UX Designer + Developer", :description => "Brian R Zaik, User Experience Designer and Developer", :keywords => %w(brian zaik brian-zaik brian-r-zaik designer user experience user-experience hci software computer) %>
 
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= jquery_include_tag :google, :force => true %>
