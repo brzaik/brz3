@@ -18,10 +18,13 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
-    @page = Page.find_by_slug(params[:id])
+    @page_slug_string = params[:id]
+    @page = Page.find_by_slug(@page_slug_string)
 
     if @page.nil? or (@page.is_private? and current_user.nil?)
-      redirect_to '/404.html'
+      # temporary redirect to old brzaik.com in case the page exists at that application
+      redirect_to 'http://old.brzaik.com/pages/' + @page_slug_string
+      # redirect_to '/404.html'
     else 
       if @page.upload_id 
         @upload = Upload.find(@page.upload_id)
