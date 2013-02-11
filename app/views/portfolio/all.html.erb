@@ -26,7 +26,12 @@
       <% @pages_col_1.each do |page| %>
         <div class="panel black" style="border-top: 0px; margin-bottom: 24px;">
           <%= link_to page do %>
-            <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
+            <% if page.upload_id %>
+              <% upload = Upload.find(page.upload_id) %>
+              <%= image_tag(upload.myfile.url(:smproj), :alt => page.title) %>
+            <% else %>
+              <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
+            <% end %>
           <% end %>
           <h3 class="panel-block-title">
             <%= link_to page do %>
@@ -47,7 +52,12 @@
       <% @pages_col_2.each do |page| %>
         <div class="panel black" style="border-top: 0px; margin-bottom: 24px;">
           <%= link_to page do %>
-            <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
+            <% if page.upload_id %>
+              <% upload = Upload.find(page.upload_id) %>
+              <%= image_tag(upload.myfile.url(:smproj), :alt => page.title) %>
+            <% else %>
+              <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
+            <% end %>
           <% end %>
           <h3 class="panel-block-title">
             <%= link_to page do %>
@@ -68,7 +78,12 @@
       <% @pages_col_3.each do |page| %>
         <div class="panel black" style="border-top: 0px; margin-bottom: 24px;">
           <%= link_to page do %>
-            <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
+            <% if page.upload_id %>
+              <% upload = Upload.find(page.upload_id) %>
+              <%= image_tag(upload.myfile.url(:smproj), :alt => page.title) %>
+            <% else %>
+              <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
+            <% end %>
           <% end %>
           <h3 class="panel-block-title">
             <%= link_to page do %>
@@ -89,7 +104,12 @@
       <% @pages_col_4.each do |page| %>
         <div class="panel black" style="border-top: 0px; margin-bottom: 24px;">
           <%= link_to page do %>
-            <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
+            <% if page.upload_id %>
+              <% upload = Upload.find(page.upload_id) %>
+              <%= image_tag(upload.myfile.url(:smproj), :alt => page.title) %>
+            <% else %>
+              <%= placeholdit_image_tag "228x150", text: "Project Image", background_color: '#22a8b4', text_color: '#FFF' %>
+            <% end %>
           <% end %>
           <h3 class="panel-block-title">
             <%= link_to page do %>
