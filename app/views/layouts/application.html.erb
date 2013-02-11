@@ -8,10 +8,6 @@
   <%= jquery_include_tag :google, :force => true %>
   <%= javascript_include_tag "application" %>
 
-  <!--[if lt IE 9]>
-  <%= javascript_include_tag 'html5shiv' %>
-  <![endif]-->
-
   <%= yield :head %>
 
   <%= csrf_meta_tags %>
@@ -42,5 +38,8 @@
 
   <%= render :partial => "elements/footer" %>
 
+  <!--[if lt IE 9]>
+  <%= javascript_include_tag 'html5shiv' %>
+  <![endif]-->
 </body>
 </html>
