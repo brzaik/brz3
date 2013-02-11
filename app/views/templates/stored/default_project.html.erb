@@ -54,6 +54,15 @@
           </li>
           <% end %>
         </ul>
+        <% if !page.url_link.empty? %>
+        <ul class="nav pull-right">
+          <li>
+            <%= link_to page.url_link do %>
+              Visit Work &rarr;
+            <% end %>
+          </li>
+        </ul>
+        <% end %>
       </div>
     </div>
   </div>
