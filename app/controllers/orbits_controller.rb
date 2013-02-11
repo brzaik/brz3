@@ -111,7 +111,7 @@ class OrbitsController < ApplicationController
 
     respond_to do |format|
       if @orbit.update_attributes(params[:orbit])
-        format.html { redirect_to @orbit, notice: 'Orbit was successfully updated.' }
+        format.html { redirect_to edit_orbit_path(@orbit), notice: 'Orbit was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
