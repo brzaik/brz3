@@ -37,10 +37,6 @@
             <p><%= page.description %></p>
             <p>
               <%= link_to page do %>view project<% end %>
-              
-              <%#= link_to "#", :style => "margin-left: 35px;" do %>
-                <%#= page.tags.count %> <!--tag --><%#= page.tags.#count == 1 ? '' : 's' %>
-              <%# end %>
             </p>
           </div>
 
@@ -51,7 +47,7 @@
               <% upload = Upload.find(page.upload_id) %>
               <%= image_tag(upload.myfile.url(:frontpage), :alt => page.title) %>
             <% else %>
-              &nbsp;<%#= placeholdit_image_tag "480x260", text: "Project Image", background_color: '#fdba13', text_color: '#000' %>
+              &nbsp;
             <% end %>
           <% end %>
         </div>
@@ -90,10 +86,6 @@
             <p><%= page.description %></p>
             <p>
               <%= link_to page do %>view project<% end %>
-              
-              <%#= link_to "#", :style => "margin-left: 35px;" do %>
-                <%#= page.tags.count %> <!--tag --><%#= page.tags.#count == 1 ? '' : 's' %>
-              <%# end %>
             </p>
           </div>
 
@@ -105,7 +97,6 @@
               <%= image_tag(upload.myfile.url(:frontpage), :alt => page.title) %>
             <% else %>
               &nbsp;
-              <%#= placeholdit_image_tag "480x260", text: "Project Image", background_color: '#fdba13', text_color: '#000' %>
             <% end %>
           <% end %>
         </div>

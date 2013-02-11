@@ -1,6 +1,6 @@
 <%
   meta :title => @page.title + " - Brian R Zaik, UX Designer + Developer",
-       :description => @page.meta_description
+       :description => @page.meta_description unless @page.meta_description.empty?
 %>
 
 <%= render page.sections %>
