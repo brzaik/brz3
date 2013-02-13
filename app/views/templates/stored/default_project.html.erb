@@ -37,7 +37,7 @@
 
   <% if page.upload_id %>
     <% upload = Upload.find(page.upload_id) %>
-    <%= image_tag(upload.myfile.url(:full), :alt => page.title) %>
+    <%= link_to image_tag(upload.myfile.url(:full), :alt => page.title), upload.myfile.url %>
   <% end %>
 
   <% if page.sections.count > 0 %>

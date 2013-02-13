@@ -1,6 +1,6 @@
 <%
-  meta :title => @page.title,
-       :description => @page.meta_description
+  meta :title => @page.title + " - Brian R Zaik, UX Designer + Developer",
+       :description => @page.description unless @page.description.empty?
 %>
 
 <%= render @page %>
